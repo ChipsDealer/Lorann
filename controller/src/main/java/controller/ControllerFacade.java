@@ -13,7 +13,61 @@ import view.IView;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public class ControllerFacade implements IController {
+public class ControllerFacade implements IControllerFacade, IOrderPerformer {
+
+    private int speedThreat;
+
+    private Order stackOrder;
+
+    private IViewFacade view;
+
+    private IViewFacade model;
+
+
+    public ControllerFacade(ControllerFacade view, ModelFacade model){
+
+    }
+
+    public void start(){
+
+    }
+
+    public void orderPerform(){
+
+    }
+
+    public void clearStackOver(){
+
+    }
+
+    public IViewFacade getModel(){
+
+    }
+
+    public void setModel(IViewFacade model){
+
+    }
+
+    public IViewFacade getView(){
+
+    }
+
+    public void setView(IViewFacade view){
+
+    }
+
+    public Order getStackOrder(){
+
+    }
+
+    public void setStackOrder(Order stackOrder){
+
+    }
+
+    public IOrderPerformer getOrderPerformer(){
+
+    }
+
 
     /** The view. */
     private final IView  view;

@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
  */
 public class ViewFacade implements IView {
 
+	
+	private Window window;
     /**
      * Instantiates a new view facade.
      */
@@ -17,6 +19,22 @@ public class ViewFacade implements IView {
         super();
     }
 
+    public void createDisplay(int[][] motionMapDimension,String[] motionMapImages, String[][] motionlessMap, int score, int life, int width, int length)
+    {
+    	this.window = new Window(width, length, motionMapDimension, motionMapImages, motionlessMap, score, life);
+    }
+    
+    public void showDisplay(int[][] motionMapDimension,String[] motionMapImages, String[][] motionlessMap, int score, int life)
+    {
+    	this.window.getPanel().setMotionlessMap(motionlessMap);
+    	this.window.getPanel().setmotionMapDimension(motionMapDimension);
+    	this.window.getPanel().setMotionMapImages(motionMapImages);
+    	this.window.getPanel().setScore(score);
+    	this.window.getPanel().setLife(life);
+    	
+    	this.window.repaint();
+    }
+    
     /*
      * (non-Javadoc)
      * @see view.IView#displayMessage(java.lang.String)
@@ -25,5 +43,13 @@ public class ViewFacade implements IView {
     public final void displayMessage(final String message) {
         JOptionPane.showMessageDialog(null, message);
     }
+
+	public Window getWindow() {
+		return window;
+	}
+
+	public void setWindow(Window window) {
+		this.window = window;
+	}
 
 }

@@ -15,7 +15,7 @@ import view.IView;
  */
 public class ControllerFacade implements IControllerFacade, IOrderPerformer {
 
-    private int speedThreat;
+    private int speedThread;
 
     private Order stackOrder;
 

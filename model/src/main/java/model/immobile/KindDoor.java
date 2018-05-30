@@ -6,14 +6,14 @@ import model.Sprite;
 public class KindDoor extends MotionLess{
 	
 	/** The Constant SPRITE. */
-    private static final Sprite SPRITE = new Sprite("KindDoor.jpg", ']');
+    private static final Sprite SPRITE = new Sprite("gate_open.png", 'O');
 
     
     /**
      * Instanciate a new KindDoor
      */
 	KindDoor() {
-		super(SPRITE, Property.BLOCKING_WITH_ACTION);
+		super(SPRITE, Property.PENETRABLE_WITH_ACTION);
 	}
 
 }

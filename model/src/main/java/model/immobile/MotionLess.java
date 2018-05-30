@@ -24,7 +24,7 @@ public abstract class MotionLess extends Element{
 	
 	/** Declaration of Action Method
 	 * Depending of object using it
-	 * Use polymorphism
+	 * Use in every MotionLess element who need specific task
 	 * 
 	 * @return void
 	 */

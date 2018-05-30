@@ -6,14 +6,14 @@ import model.Sprite;
 public class EnergicBubble extends MotionLess{
 	
 	/** The Constant SPRITE. */
-    private static final Sprite SPRITE = new Sprite("EnergicBubble.jpg", ']');
+    private static final Sprite SPRITE = new Sprite("crystal_ball.png", '@');
 
     
     /**
      * Instanciate a new EnergicBubble
      */
 	EnergicBubble() {
-		super(SPRITE, Property.BLOCKING_WITH_ACTION);
+		super(SPRITE, Property.PENETRABLE_WITH_ACTION);
 	}
 
 }

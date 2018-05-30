@@ -9,7 +9,7 @@ import java.util.List;
 import model.Example;
 
 /**
- * <h1>The Class ExampleDAO.</h1>
+ * <h1>The Class MapDAO.</h1>
  *
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
@@ -19,13 +19,13 @@ public abstract class MapDAO extends AbstractDAO {
     /*
      * Define id's value to change the Map
      */
-    private static String mapNumber = "one";
+    private static String mapNumber = "One";
     
     /** The sql example by id. */
-    private static String sqlProcedureMotion = "call findMap" + mapNumber + "_Motion";
+    private static String sqlProcedureMotion = "call findMap" + mapNumber + "Motion";
 
     /** The sql example by name. */
-    private static String sqlProcedureMotionLess = "call findMap" + mapNumber + "_MotionLess";
+    private static String sqlProcedureMotionLess = "call findMap" + mapNumber + "MotionLess";
 
     /** The id column index. */
     private static int    idColumnIndex    = 1;
@@ -43,7 +43,7 @@ public abstract class MapDAO extends AbstractDAO {
      *             the SQL exception
      */
     public static Example getExampleById(final int id) throws SQLException {
-        final CallableStatement callStatement = prepareCall(procedure1);
+        final CallableStatement callStatement = prepareCall(sqlProcedureMotion);
         Example example = null;
         callStatement.setInt(1, id);
         if (callStatement.execute()) {
@@ -66,7 +66,7 @@ public abstract class MapDAO extends AbstractDAO {
      *             the SQL exception
      */
     public static Example getExampleByName(final String name) throws SQLException {
-        final CallableStatement callStatement = prepareCall(procedure2);
+        final CallableStatement callStatement = prepareCall(sqlProcedureMotionLess);
         Example example = null;
 
         callStatement.setString(1, name);

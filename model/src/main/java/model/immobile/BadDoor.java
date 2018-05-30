@@ -6,7 +6,7 @@ import model.Sprite;
 public class BadDoor extends MotionLess{
 	
 	/** The Constant SPRITE. */
-    private static final Sprite SPRITE = new Sprite("BadDoor.jpg", ']');
+    private static final Sprite SPRITE = new Sprite("gate_closed.png", '#');
 
     
     /**

@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @author Frost
  * @version 1.0
  */
-public abstract class Motion extends Element {
+public abstract class Motion {
 	
 	/** position of the motion element in x**/
 	private int x;
@@ -21,115 +21,129 @@ public abstract class Motion extends Element {
 	private Last_statement last_statement;
 	
 	
-	public Motion(final int x, final int y, final Sprite sprite, final Property property) {
-		this.setX(x);
-		this.setY(y);
-		this.setSprite(sprite);
-		this.setProperty(property);
+	public Motion(int x, int y, Sprite sprite, Property property) {
+		
 	
 	}
 	 /**
      * delete a motion element
-     * 
      * @return nothing
      */
 	public void die() {
-		this.alive = false;
+		
 	}
 	 /**
      * move the element 
-     *    
+     *
+     * @param map 
+     *            map with motion element
+     * @param mob
+     * 			  map with motion less element      
      * @return nothing
        */
-	public abstract void move();
-		
+	public abstract void move(ArrayList<?> map, ArrayList<?> mob);
+
 	 /**
      * move the element to the Up
      *
-     *@return nothing
+     * @param map 
+     *            map with motion element
+     * @param mob
+     * 			  map with motion less element      
+     * @return boolean
        */
-	public void moveUp() {
-		this.setY(this.getY() -1);
-		setLast_statement(last_statement.UP);
+	public boolean moveUp(ArrayList<?> map, ArrayList<?> mob) {
+		return true;
 	}
 	
 	 /**
      * move the element to the Up and the Right (diagonal)
-     *     
-     * @return nothing
+     *
+     * @param map 
+     *            map with motion element
+     * @param mob
+     * 			  map with motion less element      
+     * @return boolean
        */
-	public void moveUpRight() {
-		this.setY(this.getY() -1);
-		this.setX(this.getX() +1);
-		setLast_statement(last_statement.UPRIGHT);
+	public boolean moveUpRight(ArrayList<?> map, ArrayList<?> mob) {
+		return true;
 	}
 	
 	 /**
      * move the element to the Up and the Left
-     *    
-     * @return nothing
+     *
+     * @param map 
+     *            map with motion element
+     * @param mob
+     * 			  map with motion less element      
+     * @return boolean
        */
-	public void moveUpLeft() {
-		this.setY(this.getY() -1);
-		this.setX(this.getX() -1);
-		setLast_statement(last_statement.UPLEFT);
+	public boolean moveUpLeft(ArrayList<?> map, ArrayList<?> mob) {
+		return true;
 	}
 	
 	 /**
      * move the element the Down
      *
-     * @return nothing
+     * @param map 
+     *            map with motion element
+     * @param mob
+     * 			  map with motion less element      
+     * @return boolean
        */
-	public void moveDown() {
-		this.setY(this.getY() +1);
-		setLast_statement(last_statement.DOWN);
+	public boolean moveDown(ArrayList<?> map, ArrayList<?> mob) {
+		return true;
 	}
 	
 	 /**
      * move the element to the Down and the Right
-     *  
-     * @return nothing
+     *
+     * @param map 
+     *            map with motion element
+     * @param mob
+     * 			  map with motion less element      
+     * @return boolean
        */
-	public void moveDownRight() {
-		this.setY(this.getY() +1);
-		this.setX(this.getX() +1);
-		setLast_statement(last_statement.DOWNRIGHT);
+	public boolean moveDownRight(ArrayList<?> map, ArrayList<?> mob) {
+		return true;
 	}
 	
 	 /**
      * move the element to the Down and the Left
-     *  
-     * @return nothing
+     *
+     * @param map 
+     *            map with motion element
+     * @param mob
+     * 			  map with motion less element      
+     * @return boolean
        */
-	public void moveDownLeft() {
-		this.setY(this.getY() +1);
-		this.setX(this.getX() -1);
-		setLast_statement(last_statement.DOWNLEFT);
+	public boolean moveDownLeft(ArrayList<?> map, ArrayList<?> mob) {
+		return true;
 	}
 	
 	 /**
      * move the element to Left 
-     *  
-     * @return nothing
+     *
+     * @param map 
+     *            map with motion element
+     * @param mob
+     * 			  map with motion less element      
+     * @return boolean
        */
-	public void moveLeft() {
-		this.setX(this.getX() -1);
-		setLast_statement(last_statement.LEFT);
+	public boolean moveLeft(ArrayList<?> map, ArrayList<?> mob) {
+		return true;
 	}
 	 /**
      * move the element to the right
-     *    
-     * @return nothing
+     *
+     * @param map 
+     *            map with motion element
+     * @param mob
+     * 			  map with motion less element      
+     * @return boolean
        */
-	public void moveRight() {
-		this.setX(this.getX() +1);
-		setLast_statement(last_statement.RIGHT);
-	}
-	
-	public void doNothing() {
-		this.setX(this.getX());
-		this.setY(this.getY() +1);
-		setLast_statement(last_statement.NOP);
+	public boolean moveRight(ArrayList<?> map, ArrayList<?> mob) {
+		return true;
 	}
 	
 	
@@ -155,10 +169,6 @@ public abstract class Motion extends Element {
 	
 	public void setAlive(boolean alive) {
 		this.alive = alive;
-	}
-	
-	public void respawn() {
-		this.alive = true;
 	}
 	
 	public Last_statement getLast_statement() {

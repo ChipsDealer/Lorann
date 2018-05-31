@@ -9,19 +9,31 @@ import java.util.ArrayList;
  */
 
 public class Kyracj extends Motion {
-
-	public Kyracj(int x,int y, Sprite sprite, Property property) {
-		// TODO Auto-generated constructor stub
+	
+	//** Constant SPRITE **/
+	private static final Sprite SPRITEMONSTER1 = new Sprite("monster_1.png", "D");
+	private int x;
+	private int y;
+	private Last_statement last_statement;
+	
+	public Kyracj() {
+		super(final int x, final int y, final Sprite SPRITEMONSTER1, Property.BLOCKING_WITH_ACTION); 
+		SPRITEMONSTER1.loadImage();
 	}
 	
 	/*
      * (non-Javadoc)
      * @see model.mobile#move(ArrayList<?> map, ArrayList<?> mob)
      */
-	@Override
-	public void move(ArrayList<?> map, ArrayList<?> mob) {
-		// TODO Auto-generated method stub
-		
+	
+	public void move() {
+			if (this.last_statement == UP) {
+				super.moveUp();
+			}
+			else {
+				super.moveDown();
+			}
+		}
 	}
 	
 	 /*
@@ -29,6 +41,6 @@ public class Kyracj extends Motion {
      * @see model.mobile#die()
      */
 	public void die() {
-		
+		super.die();
 	}
 }

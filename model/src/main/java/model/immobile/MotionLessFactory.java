@@ -66,7 +66,7 @@ public abstract class MotionLessFactory {
 	    * @return the motionless element
 	    */
 		
-	public static MotionLess createBASICGROUND() {
+	public static MotionLess createBasicGround() {
 			return BASICGROUND;
 	}
 	

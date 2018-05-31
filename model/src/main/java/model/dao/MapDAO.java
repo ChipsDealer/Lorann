@@ -11,7 +11,7 @@ import model.Example;
 /**
  * <h1>The Class MapDAO.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
+ * @author Léo Thommes leo.thommes@viacesi.fr
  * @version 1.0
  */
 public abstract class MapDAO extends AbstractDAO {
@@ -19,13 +19,13 @@ public abstract class MapDAO extends AbstractDAO {
     /*
      * Define id's value to change the Map
      */
-    private static String mapNumber = "One";
+    private static String mapNumber = "1";
     
     /** The sql example by id. */
-    private static String sqlProcedureMotion = "call findMap" + mapNumber + "Motion";
+    private static String sqlProcedureMotion = "call Motion " + mapNumber;
 
     /** The sql example by name. */
-    private static String sqlProcedureMotionLess = "call findMap" + mapNumber + "MotionLess";
+    private static String sqlProcedureMotionLess = "call MotionLess " + mapNumber;
 
     /** The id column index. */
     private static int    idColumnIndex    = 1;

@@ -16,21 +16,9 @@ public abstract class MotionLess extends Element{
 	 * @author Léo Thommes
 	 * @return
 	 */
-
 	
 	MotionLess(final Sprite sprite, final Property property) {
 		super(sprite, property);
 	}
 	
-	/** Declaration of Action Method
-	 * Depending of object using it
-	 * Use in every MotionLess element who need specific task
-	 * 
-	 * @return void
-	 */
-	public void Action() {
-		
-	}
-	
-
 }

@@ -13,7 +13,7 @@ public class BadDoor extends MotionLess{
      * Instanciate a new BadDoor
      */
 	BadDoor() {
-		super(SPRITE, Property.BLOCKING_WITH_ACTION);
+		super(SPRITE, Property.PENETRABLE_WITH_ACTION);
 	}
 
 }

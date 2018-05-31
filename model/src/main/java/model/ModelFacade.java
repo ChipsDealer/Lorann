@@ -1,14 +1,9 @@
 package model;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
-
-import com.mysql.cj.api.mysqla.result.Resultset;
 
 import model.dao.MapDAO;
-import model.immobile.EnergicBubble;
 import model.immobile.MotionLessFactory;
 
 /**
@@ -28,12 +23,14 @@ public final class ModelFacade implements IModel {
 	
 	/** The Constant MapDAO. */
 	public static MapDAO mapDao;
-
+	
+	
 	/** The ArrayList MotionFactory. */
 	public ArrayList<MotionFactory> mapMotion;
 	
 	/** The ArrayList MotionLessFactory. */
 	public ArrayList<MotionLessFactory> mapMotionLess;
+	
 	
     /**
      * Instantiates a new model facade.

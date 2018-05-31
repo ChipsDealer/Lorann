@@ -9,9 +9,12 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-@SuppressWarnings("serial")
 public class Panel extends JPanel{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String[] motionMapImages;
 	private int[][] motionMapDimension;
 	private String[][] motionlessMap;
@@ -74,7 +77,9 @@ public class Panel extends JPanel{
 	
 	public void paintComponent(Graphics g)
 	{
-		/*
+		g.setColor(Color.BLACK);
+		g.fillRect(0, 0, this.mapWidth * 32, (this.mapLength * 32) + 40);
+		
 		Image img;
 		//Load motionlessMap
 		for (int i = 0; i < this.mapLength; i++)
@@ -91,19 +96,27 @@ public class Panel extends JPanel{
 		}
 		
 		//Load motionMap
+
 		for (int i = 0; i < 5; i++)
 		{
-			try {
-			      img = ImageIO.read(new File(this.motionMapImages[i]));
-			      g.drawImage(img, this.motionMapDimension[i][1], this.motionMapDimension[i][2], this);
-			    } catch (IOException e) {
-			      e.printStackTrace();
-			    } 
+			if (motionMapDimension[i][0] != -1)
+			{
+				try {
+				      img = ImageIO.read(new File(this.motionMapImages[i]));
+				      g.drawImage(img, this.motionMapDimension[i][0], this.motionMapDimension[i][1], this);
+				    } catch (IOException e) {
+				      e.printStackTrace();
+				    } 
+			}
+			else
+			{
+				
+			}
 		}
-		*/
+		
 		//loadHud (not necessary but it's better for having more fun)
-	    g.setColor(Color.red);
-	    g.drawString("Lifes : " + this.life + "  -  Score : " + this.score, 10, (this.mapLength * 32));
+	    g.setColor(Color.WHITE);
+	    g.drawString("Lifes : " + this.life + "  -  Score : " + this.score, ((this.mapWidth * 32) / 2) - 60, (this.mapLength * 32) + 15);
 	    
 	}
 

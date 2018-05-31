@@ -7,21 +7,21 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * <h1>The Class LorannBDDConnector.</h1>
+ * <h1>The Class BoulderDashBDDConnector.</h1>
  *
- * @author Léo Thommes leo.thommes@viacesi.fr
+ * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
 final class LorannBDDConnector {
 
-    /** The constant instance of LorannBDDConnector (singleton). */
+    /** The instance. */
     private static LorannBDDConnector instance;
 
     /** The login. */
     private static String                  user     = "java";
 
     /** The password. */
-    private static String                  password = "";
+    private static String                  password = "Javaproject123@";
 
     /** The url. */
     private static String                  url      = "jdbc:mysql://pma.vandeiheim.ovh/java_project?useSSL=false&serverTimezone=UTC&noAccessToProcedureBodies=true";
@@ -33,18 +33,16 @@ final class LorannBDDConnector {
     private Statement                      statement;
 
     /**
-     * Instantiates a new Lorann BDD connector.
+     * Instantiates a new boulder dash BDD connector.
      */
-    public LorannBDDConnector() {
+    private LorannBDDConnector() {
         this.open();
     }
-    
-    
 
     /**
-     * Gets the single instance of LorannBDDConnector.
+     * Gets the single instance of BoulderDashBDDConnector.
      *
-     * @return single instance of LorannBDDConnector
+     * @return single instance of BoulderDashBDDConnector
      */
     public static LorannBDDConnector getInstance() {
         if (instance == null) {
@@ -55,8 +53,7 @@ final class LorannBDDConnector {
 
     /**
      * Sets the instance.
-     * Private by default for security.
-     * 
+     *
      * @param instance
      *            the new instance
      */
@@ -74,7 +71,7 @@ final class LorannBDDConnector {
             this.connection = DriverManager.getConnection(LorannBDDConnector.url, LorannBDDConnector.user,
                     LorannBDDConnector.password);
             this.statement = this.connection.createStatement();
-            System.out.println("Connection à la base de données réussi !");
+            System.out.println("Connection réussi");
             return true;
         } catch (final SQLException exception) {
             exception.printStackTrace();

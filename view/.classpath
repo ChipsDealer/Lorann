@@ -13,11 +13,8 @@
 		</attributes>
 	</classpathentry>
 <<<<<<< HEAD
-<<<<<<< HEAD
 	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
 =======
-=======
->>>>>>> Léo
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 >>>>>>> f33104d985b7b99d5d1511d1da7c6534da19ed67
 		<attributes>

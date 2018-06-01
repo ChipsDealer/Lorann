@@ -16,8 +16,6 @@ import java.io.InputStreamReader;
  */
 public abstract class MotionFactory {
 	
-	/** The String read in file. */
-    private String line;
 	/** The Constant fileMotion. */
     protected static String fileMotion = "D:\\WorkspaceEclipse\\lecturefichier\\src\\lecturefichier\\Motion.txt"; //<-- modif
     private static final Lorann LORANN = new Lorann(0,0);
@@ -40,13 +38,12 @@ public abstract class MotionFactory {
 	};
 
     
-	public void loadFile() throws Exception
+	public static void loadFile() throws Exception
 	{
 		
 		char fileSymbol;
     	String tabMotionSettings[] = new String[1];
-    	@SuppressWarnings("unused")
-		String tabMotionLess[];
+        String line;
 	
         InputStream flux = new FileInputStream(fileMotion); 
         InputStreamReader read = new InputStreamReader(flux);

@@ -55,7 +55,7 @@ public class Lorann extends Motion{
 			case PENETRABLE_WITH_ACTION :
 			{
 				bool = false;	// Treasure or energicbubble
-				motionLess[this.y][this.x].action(); //get the action of the element
+				motionLess[this.y][this.x].action(motion, motionLess); //get the action of the element
 			}
 			default:
 			{

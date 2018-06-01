@@ -3,6 +3,7 @@ package model.motionLess;
 import model.Element;
 import model.Property;
 import model.Sprite;
+import model.mobile.Motion;
 
 public abstract class MotionLess extends Element{
 	
@@ -21,7 +22,7 @@ public abstract class MotionLess extends Element{
 		super(sprite, property);
 	}
 	
-	public void action() {
+	public void action(Motion[] motion, MotionLess[][] motionLess) {
 		
 	}
 	

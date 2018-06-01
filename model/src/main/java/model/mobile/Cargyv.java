@@ -77,7 +77,7 @@ public class Cargyv extends Motion {
      * @see model.mobile#die()
      */
 	public void die() {
-		
+		super.die();
 	}
 
 	@Override

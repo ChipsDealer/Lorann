@@ -45,22 +45,6 @@ public abstract class MotionLessFactory {
      */
 	private static MotionLess[][] motionLess;
 	private static String fileMotionLess = "D:\\WorkspaceEclipse\\lecturefichier\\src\\lecturefichier\\MotionLess.txt";
-
-
-    
-	
-
-	/*
-    public static MotionLess getFromFileSymbol(final char fileSymbol) {
-        for (final MotionLess motionLess : motionLess) {
-            if (motionLess.getSprite().getId() == fileSymbol) {
-                return motionLess;
-            }
-        }
-        return BASICGROUND;
-    }
-    
-    */
     
 	/**
      * Gets the good MotionLess from file symbol.
@@ -69,15 +53,12 @@ public abstract class MotionLessFactory {
      *            the file symbol
      * @return the from file symbol
      */
-    public Point loadFile() throws Exception
+    public static Point loadFile() throws Exception
     {
     	
-    	String tabMotionLessSettings[] = new String[2];
-        String tabMotionLess[];
         String line;
         char fileSymbol;
-        Point position;
-    	int x,y;
+        Point position = new Point();
 		
         InputStream flux = new FileInputStream(fileMotionLess); 
         InputStreamReader read = new InputStreamReader(flux);
@@ -96,6 +77,8 @@ public abstract class MotionLessFactory {
         	}
         	//tabMotionLessSettings[i] = line;       	
         }
+		
+        MotionLessFactory.motionLess = new MotionLess[position.y][position.x];
         
         for (int i=0; i<position.y; i++)
         {
@@ -104,22 +87,64 @@ public abstract class MotionLessFactory {
         		line = buff.readLine();
         		/** Convert String to char. */
         		fileSymbol = line.charAt(0);
-        		
-        		for (int k = 0; k < ) 
+        		switch (fileSymbol)
         		{
-        			if (motionLess.getSprite().getId() == fileSymbol) 
-        			{
-        				return motionLess;
-        				
-        			}
+	        		case '@':
+		        		{
+		        			MotionLessFactory.motionLess[i][j] = MotionLessFactory.ENERGICBUBBLE;
+		        		}
+		        	break;
+		        	
+	        		case '$':
+		        		{
+		        			MotionLessFactory.motionLess[i][j] = MotionLessFactory.TREASURE;
+		        		}
+		        		
+	        		case '#':
+		        		{
+		        			MotionLessFactory.motionLess[i][j] = MotionLessFactory.BADDOOR;
+		        		}
+		        	break;
+		        		
+	        		case 'O':
+		        		{
+		        			MotionLessFactory.motionLess[i][j] = MotionLessFactory.KINDDOOR;
+		        		}
+		        	break;
+		        	
+	        		case '-':
+		        		{
+		        			MotionLessFactory.motionLess[i][j] = MotionLessFactory.LATERALBONE;
+		        		}
+	        		break;
+		        	
+	        		case '|':
+		        		{
+		        			MotionLessFactory.motionLess[i][j] = MotionLessFactory.VERTICALBONE;
+		        		}
+	        		break;
+			        	
+	        		case 'X':
+		        		{
+		        			MotionLessFactory.motionLess[i][j] = MotionLessFactory.WALLCORNER;
+		        		}
+	        		break;
+	        		
+	        		case '_':
+		        		{
+		        			MotionLessFactory.motionLess[i][j] = MotionLessFactory.BASICGROUND;
+		        		}
+	        		break;
+	        		
+	        		default:
+		        		{
+		        			MotionLessFactory.motionLess[i][j] = MotionLessFactory.BASICGROUND;
+		        		}
         		}
         	}
-    		
         }
         buff.close();
-    return BASICGROUND;
-
-
+        return position;
     }
 	
 	

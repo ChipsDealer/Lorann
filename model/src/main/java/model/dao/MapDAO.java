@@ -3,8 +3,7 @@ package model.dao;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+
 
 import model.Example;
 
@@ -104,26 +103,26 @@ public abstract class MapDAO extends AbstractDAO {
     */
     
     
-    public ResultSet getProcedureMotion(String id) {
+    public static ResultSet getProcedureMotion(String id) {
 		return null;
     	
     }
     
-    public ResultSet getProcedureMotionLess(String id) {
+    public static ResultSet getProcedureMotionLess(String id) {
   		return null;
       	
       }
     
     
-    public void CreateMap() {
+    public static void CreateMap() {
     	
     }
     
-    public void CreateMapMotionLess() {
+    public static void CreateMapMotionLess() {
     	
     }
     
-    public void CreateMapMotion() {
+    public static void CreateMapMotion() {
     	
     }
     

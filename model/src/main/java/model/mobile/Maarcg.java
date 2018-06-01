@@ -74,7 +74,7 @@ public class Maarcg extends Motion {
      * @see model.mobile#die()
      */
 	public void die() {
-		
+		super.die();
 	}
 
 	@Override

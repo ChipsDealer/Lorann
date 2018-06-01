@@ -1,7 +1,9 @@
 package model.motionLess;
 
+import model.HUD;
 import model.Property;
 import model.Sprite;
+import model.mobile.Motion;
 
 public class KindDoor extends MotionLess{
 	
@@ -13,7 +15,12 @@ public class KindDoor extends MotionLess{
      * Instanciate a new KindDoor
      */
 	KindDoor() {
-		super(SPRITE, Property.PENETRABLE_WITH_ACTION);
+		super(SPRITE, Property.PENETRABLE_WITH_ACTION);	
 	}
 
+	@Override
+	public void action(Motion[] motion, MotionLess[][] motionLess) 
+	{
+		HUD.setGameRunning(false);
+	}
 }

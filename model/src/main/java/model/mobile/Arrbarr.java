@@ -72,7 +72,7 @@ public class Arrbarr extends Motion {
      * @see model.mobile#die()
      */
 	public void die() {
-		
+		super.die();
 	}
 
 	@Override

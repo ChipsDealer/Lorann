@@ -83,7 +83,7 @@ public class Spell extends Motion {
 	}
 	
 	public void die() {
-		
+		super.die();
 	}
 
 	@Override

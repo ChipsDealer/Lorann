@@ -3,40 +3,67 @@ package model;
 
 public abstract class HUD {
 	
-	protected int score = 0;
-	protected int lifes = 11;
+	private static int mapX;
+	private static int mapY;
+	private static int score = 0;
+	private static int lifes = 11;
+	private static boolean gameRunning = true;
 	
 
-	private void setScore(final int score) {
-		this.score = score;
+	public static void setScore(final int score) {
+		HUD.score = score;
 	}
 	
-	public final int getScore() {
-		return this.score;
+	public static int getScore() {
+		return HUD.score;
 	}
 	
 	
-	private void setLifes(final int lifes) {
-		this.lifes=lifes;
+	public static void setLifes(final int lifes) {
+		HUD.lifes=lifes;
 	}
 	
-	public final int getLifes() {
-		return this.lifes;
+	public static int getLifes() {
+		return HUD.lifes;
 	}
 	
-	private void addScore(final int score) {
-		this.score = score + 200;
+	public static void addScore() {
+		HUD.score = HUD.score + 200;
 	}
 	
-	private void lessScore(final int score) {
-		this.score = score-200;
+	public static void lessScore() {
+		HUD.score = HUD.score-200;
 	}
 	
-	private void addLifes(final int lifes) {
-		this.lifes=lifes+1;
+	public static void addLifes() {
+		HUD.lifes=HUD.lifes+1;
 	}
 	
-	private void lessLifes(final int lifes) {
-		this.lifes=lifes-1;
+	public static void lessLifes() {
+		HUD.lifes=HUD.lifes-1;
+	}
+
+	public static boolean isGameRunning() {
+		return gameRunning;
+	}
+
+	public static void setGameRunning(boolean gameRunning) {
+		HUD.gameRunning = gameRunning;
+	}
+
+	public static int getMapX() {
+		return mapX;
+	}
+
+	public static void setMapX(int mapX) {
+		HUD.mapX = mapX;
+	}
+
+	public static int getMapY() {
+		return mapY;
+	}
+
+	public static void setMapY(int mapY) {
+		HUD.mapY = mapY;
 	}
 }

@@ -21,7 +21,7 @@ public class maintest {
 		{
 			for (int j = 0; j < x; j++)
 			{
-				test3[i][j] = "C:\\Users\\Nathan\\AppData\\Roaming\\Lorann\\bone.png"; 
+				test3[i][j] = "/images/bone.png"; 
 			}
 		}
 		view.createDisplay(test, test2, test3, 0, 11, x, y);
@@ -32,7 +32,7 @@ public class maintest {
 			{
 				for (int j = 0; j < x; j++)
 				{
-					test3[i][j] = "C:\\Users\\Nathan\\AppData\\Roaming\\Lorann\\bone.png"; 
+					test3[i][j] = "images/crystal_ball.png"; 
 				}
 			}
 			view.showDisplay(test, test2, test3, 500, 10);
@@ -49,7 +49,7 @@ public class maintest {
 			{
 				for (int j = 0; j < x; j++)
 				{
-					test3[i][j] = "C:\\Users\\Nathan\\AppData\\Roaming\\Lorann\\vertical_bone.png"; 
+					test3[i][j] = "images/bone.png"; 
 				}
 			}
 			view.showDisplay(test, test2, test3, 500, 10);

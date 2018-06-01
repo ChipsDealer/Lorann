@@ -13,14 +13,14 @@ import model.motionLess.MotionLess;
 public class Lorann extends Motion{
 		
 	/** All the constant SPRITE **/
-	private static final Sprite SPRITEB = new Sprite("lorann_b.png", 'L');
-	private static final Sprite SPRITEBL = new Sprite("lorann_bl.png", 'L');
-	private static final Sprite SPRITEBR = new Sprite("lorann_br.png", 'L');
-	private static final Sprite SPRITEL = new Sprite("lorann_l.png", 'L');
-	private static final Sprite SPRITER = new Sprite("lorann_r.png", 'L');
-	private static final Sprite SPRITEU = new Sprite("lorann_u.png", 'L');
-	private static final Sprite SPRITEUL = new Sprite("lorann_ul.png", 'L');
-	private static final Sprite SPRITEUR = new Sprite("lorann_ur.png", 'L');
+	private static final Sprite SPRITEB = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\lorann_b.png", 'L');
+	private static final Sprite SPRITEBL = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\lorann_bl.png", 'L');
+	private static final Sprite SPRITEBR = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\lorann_br.png", 'L');
+	private static final Sprite SPRITEL = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\lorann_l.png", 'L');
+	private static final Sprite SPRITER = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\lorann_r.png", 'L');
+	private static final Sprite SPRITEU = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\lorann_u.png", 'L');
+	private static final Sprite SPRITEUL = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\lorann_ul.png", 'L');
+	private static final Sprite SPRITEUR = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\lorann_ur.png", 'L');
 	private int x;
 	private int y;
 	@SuppressWarnings("unused")
@@ -96,7 +96,9 @@ public class Lorann extends Motion{
      * @see model.mobile#move(ArrayList<?> map, ArrayList<?> mob)
      */
 	@Override
-	public void move(Motion motion[], MotionLess motionLess[][]) {
+	public void move(Motion motion[], MotionLess motionLess[][], String dir) 
+	{
+		this.lorannMove(motion, motionLess, dir);
 	}
 	
 	public void lorannMove(Motion motion[], MotionLess motionLess[][], String dir) 
@@ -238,6 +240,9 @@ public class Lorann extends Motion{
      */
 	public void die() {
 		super.die();
+	}
+	@Override
+	public void move(Motion[] motion, MotionLess[][] motionLess) {
 	}
 
 	

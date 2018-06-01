@@ -44,7 +44,7 @@ public abstract class MotionLessFactory {
      * The motionless elements is an array of all possible MotionlessElement.
      */
 	private static MotionLess[][] motionLess;
-	private static String fileMotionLess = "D:\\WorkspaceEclipse\\lecturefichier\\src\\lecturefichier\\MotionLess.txt";
+	private static String fileMotionLess = "D:\\Téléchargements\\MotionLess.txt";
     
 	/**
      * Gets the good MotionLess from file symbol.
@@ -95,7 +95,7 @@ public abstract class MotionLessFactory {
 		        		}
 		        	break;
 		        	
-	        		case '$':
+	        		case 'c':
 		        		{
 		        			MotionLessFactory.motionLess[i][j] = MotionLessFactory.TREASURE;
 		        		}

@@ -13,7 +13,7 @@ import model.motionLess.MotionLess;
 
 public class Spell extends Motion {
 
-	private static final Sprite SPRITESPELL = new Sprite("SPELLGREEN.png", '°'); // Change sprite
+	private static final Sprite SPRITESPELL = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\SPELLGREEN.png", '°'); // Change sprite
 	private int x;
 	private int y;
 	private Last_statement last_statement;
@@ -148,6 +148,12 @@ public class Spell extends Motion {
 		}
 		
 		
+		
+	}
+
+	@Override
+	public void move(Motion[] motion, MotionLess[][] motionLess, String dir) {
+		// TODO Auto-generated method stub
 		
 	}
 }

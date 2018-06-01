@@ -6,7 +6,7 @@ import model.Sprite;
 public class VerticalBone extends MotionLess{
 	
 	/** The Constant SPRITE. */
-    private static final Sprite SPRITE = new Sprite("vertical_bone.png", '|');
+    private static final Sprite SPRITE = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\vertical_bone.png", '|');
 
     
     /**

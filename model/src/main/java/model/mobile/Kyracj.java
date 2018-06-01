@@ -13,7 +13,7 @@ import model.motionLess.MotionLess;
 public class Kyracj extends Motion {
 	
 	//** Constant SPRITE **/
-	private static final Sprite SPRITEMONSTER1 = new Sprite("monster_1.png", 'D');
+	private static final Sprite SPRITEMONSTER1 = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\monster_1.png", 'D');
 	private int x;
 	private int y;
 	private Last_statement last_statement;
@@ -96,6 +96,12 @@ public class Kyracj extends Motion {
      */
 	public void die() {
 		super.die();
+	}
+
+	@Override
+	public void move(Motion[] motion, MotionLess[][] motionLess, String dir) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

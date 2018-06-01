@@ -43,7 +43,14 @@ public abstract class Motion extends Element {
      * @return nothing
        */
 	public abstract void move(Motion motion[], MotionLess motionLess[][]);
-		
+	
+	/**
+     * move the element Lorann
+     *    
+     * @return nothing
+       */
+	public abstract void move(Motion motion[], MotionLess motionLess[][], String dir);
+	
 	 /**
      * move the element to the Up
      *

@@ -14,7 +14,7 @@ import model.motionLess.MotionLess;
 public class Cargyv extends Motion {
 
 	//* All the Constant**/
-	private static final Sprite SPRITEMONSTER2 = new Sprite("monster_2.png", 'E');
+	private static final Sprite SPRITEMONSTER2 = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\monster_2.png", 'E');
 	private int x;
 	private int y;
 	private Last_statement last_statement;
@@ -97,5 +97,11 @@ public class Cargyv extends Motion {
 				super.moveRight();			
 			}
 		}
+	}
+
+	@Override
+	public void move(Motion[] motion, MotionLess[][] motionLess, String dir) {
+		// TODO Auto-generated method stub
+		
 	}	
 }

@@ -13,7 +13,7 @@ import model.motionLess.MotionLess;
 public class Arrbarr extends Motion {
 
 	//* All the Constant**/
-	private static final Sprite SPRITEMONSTER3 = new Sprite("monster_3.png", 'M');
+	private static final Sprite SPRITEMONSTER3 = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\monster_3.png", 'M');
 	private int x;
 	private int y;
 	private Last_statement last_statement;
@@ -152,6 +152,12 @@ public class Arrbarr extends Motion {
 								}
 					}
 		}
+	}
+
+	@Override
+	public void move(Motion[] motion, MotionLess[][] motionLess, String dir) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

@@ -11,7 +11,6 @@ C:\Users\Nathan\git\Lorann\model\src\main\java\model\HUD.java
 C:\Users\Nathan\git\Lorann\model\src\main\java\model\motionLess\BadDoor.java
 C:\Users\Nathan\git\Lorann\model\src\main\java\model\motionLess\Treasure.java
 C:\Users\Nathan\git\Lorann\model\src\main\java\model\mobile\Spell.java
-C:\Users\Nathan\git\Lorann\model\src\main\java\model\IModel.java
 C:\Users\Nathan\git\Lorann\model\src\main\java\model\mobile\Motion.java
 C:\Users\Nathan\git\Lorann\model\src\main\java\model\motionLess\EnergicBubble.java
 C:\Users\Nathan\git\Lorann\model\src\main\java\model\Element.java
@@ -23,6 +22,7 @@ C:\Users\Nathan\git\Lorann\model\src\main\java\model\motionLess\MotionLessFactor
 C:\Users\Nathan\git\Lorann\model\src\main\java\model\motionLess\WallCorner.java
 C:\Users\Nathan\git\Lorann\model\src\main\java\model\dao\package-info.java
 C:\Users\Nathan\git\Lorann\model\src\main\java\model\motionLess\VerticalBone.java
+C:\Users\Nathan\git\Lorann\model\src\main\java\model\MotionLess.java
 C:\Users\Nathan\git\Lorann\model\src\main\java\model\mobile\Kyracj.java
 C:\Users\Nathan\git\Lorann\model\src\main\java\model\Property.java
 C:\Users\Nathan\git\Lorann\model\src\main\java\model\motionLess\MotionLess.java

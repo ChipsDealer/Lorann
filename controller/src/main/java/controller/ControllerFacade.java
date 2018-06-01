@@ -1,9 +1,9 @@
 package controller;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.sql.SQLException;
-import java.util.List;
 
-import model.Example;
 import model.IModel;
 import view.IView;
 
@@ -13,13 +13,15 @@ import view.IView;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public class ControllerFacade implements IController {
+public class ControllerFacade implements IController, KeyListener {
 
     /** The view. */
     private final IView  view;
 
     /** The model. */
     private final IModel model;
+    
+    private String lorannDir;
 
     /**
      * Instantiates a new controller facade.
@@ -41,18 +43,32 @@ public class ControllerFacade implements IController {
      * @throws SQLException
      *             the SQL exception
      */
-    public void start() throws SQLException {
-        this.getView().displayMessage(this.getModel().getExampleById(1).toString());
-
-        this.getView().displayMessage(this.getModel().getExampleByName("Example 2").toString());
-
-        final List<Example> examples = this.getModel().getAllExamples();
-        final StringBuilder message = new StringBuilder();
-        for (final Example example : examples) {
-            message.append(example);
-            message.append('\n');
-        }
-        this.getView().displayMessage(message.toString());
+    public void start() throws Exception 
+    {
+    	this.getModel().createMap();
+    	this.getModel().loadMap();
+    	//this.getView().addListener(this);
+    	this.getView().createDisplay(this.getModel().convertMotionMapDimension(), this.getModel().convertMotionMapImages(), this.getModel().convertMotionLessMap(), this.getModel().getScore(), this.getModel().getLifes(), this.getModel().getMapX(), this.getModel().getMapY());
+    	runGame();
+    }
+    
+    public void runGame() throws Exception
+    {
+    	while (this.getModel().isGameRunning() == true & this.getModel().getLifes() > 0)
+    	{
+    		this.getView().showDisplay(this.getModel().convertMotionMapDimension(), this.getModel().convertMotionMapImages(), this.getModel().convertMotionLessMap(), this.getModel().getScore(), this.getModel().getLifes());
+    		Thread.sleep(500);
+    		if (this.getModel().isLorannAlive() == true)
+    		{
+    			this.getModel().moveMobile();
+    			//this.getModel().moveLorann(this.lorannDir);
+    			
+    		}
+    		else
+    		{
+    			this.getModel().respawn();
+    		}
+    	}
     }
 
     /**
@@ -72,4 +88,22 @@ public class ControllerFacade implements IController {
     public IModel getModel() {
         return this.model;
     }
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }

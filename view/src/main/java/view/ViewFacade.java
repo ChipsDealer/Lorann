@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.event.KeyListener;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -111,6 +113,11 @@ public class ViewFacade implements IView {
 	 */
 	public void setWindow(Window window) {
 		this.window = window;
+	}
+	
+	public void addListener(KeyListener listener)
+	{
+		this.getWindow().addKeyListener(listener);
 	}
 
 }

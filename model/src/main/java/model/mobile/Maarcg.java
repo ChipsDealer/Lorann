@@ -14,7 +14,7 @@ import model.motionLess.MotionLess;
 public class Maarcg extends Motion {
 	
 	//** Constant SPRITE **/
-	private static final Sprite SPRITEMONSTER4 = new Sprite("monster_4.png", 'N');
+	private static final Sprite SPRITEMONSTER4 = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\monster_4.png", 'N');
 	private int x;
 	private int y;
 	@SuppressWarnings("unused")
@@ -155,5 +155,13 @@ public class Maarcg extends Motion {
 			}
 			
 		}
+	}
+
+
+
+	@Override
+	public void move(Motion[] motion, MotionLess[][] motionLess, String dir) {
+		// TODO Auto-generated method stub
+		
 	}
 }

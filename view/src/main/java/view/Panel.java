@@ -175,9 +175,6 @@ public class Panel extends JPanel{
 			{
 				try {
 				      img = ImageIO.read(new File(this.motionlessMap[i][j]));
-					//ImageIcon imgIcon = new ImageIcon(this.getClass().getResource("images/bone.png"));
-					//img = imgIcon.getImage();
-					//img = ImageIO.read(this.getClass().getResource(this.motionlessMap[i][j]));
 				      g.drawImage(img, j*32, i*32, this);
 				    } catch (Exception e) {
 				      e.printStackTrace();
@@ -190,14 +187,13 @@ public class Panel extends JPanel{
 		 * If tiles's position are different of -1
 		 */
 
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 6; i++)
 		{
 			if (motionMapDimension[i][0] != -1)
 			{
 				try {
 				      img = ImageIO.read(new File(this.motionMapImages[i]));
-				     // img = (new ImageIcon(this.getClass().getResource(this.motionMapImages[i])).getImage());
-				      g.drawImage(img, this.motionMapDimension[i][0], this.motionMapDimension[i][1], this);
+				      g.drawImage(img, this.motionMapDimension[i][0] * 32, this.motionMapDimension[i][1] * 32, this);
 				    } catch (Exception e) {
 				      e.printStackTrace();
 				    } 

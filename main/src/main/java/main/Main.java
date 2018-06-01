@@ -27,7 +27,10 @@ public abstract class Main {
             controller.start();
         } catch (final SQLException exception) {
             exception.printStackTrace();
-        }
+        } catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
 }

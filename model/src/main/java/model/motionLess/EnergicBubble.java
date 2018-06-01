@@ -8,7 +8,7 @@ import model.mobile.Motion;
 public class EnergicBubble extends MotionLess{
 	
 	/** The Constant SPRITE. */
-    private static final Sprite SPRITE = new Sprite("crystal_ball.png", '@');
+    private static final Sprite SPRITE = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\crystal_ball.png", '@');
 
     
     /**

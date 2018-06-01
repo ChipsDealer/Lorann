@@ -1,11 +1,11 @@
 package model.dao;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-
-import model.Example;
 
 /**
  * <h1>The Class MapDAO.</h1>
@@ -14,23 +14,23 @@ import model.Example;
  * @version 1.0
  */
 public abstract class MapDAO extends AbstractDAO {
-	
+
     /*
      * Define id's value to change the Map
      */
     private static String mapNumber = "1";
-    
+
     /** The sql example by id. */
-    private static String sqlProcedureMotion = "call Motion " + mapNumber;
+    public static String sqlProcedureMotion = "call Motion " + mapNumber;
 
     /** The sql example by name. */
-    private static String sqlProcedureMotionLess = "call MotionLess " + mapNumber;
+    public static String sqlProcedureMotionLess = "call MotionLess " + mapNumber;
 
     /** The id column index. */
-    private static int    idColumnIndex    = 1;
+    public static int    idColumnIndex    = 1;
 
     /** The name column index. */
-    private static int    nameColumnIndex  = 2;
+    public static int    nameColumnIndex  = 2;
 
     /**
      * Gets the example by id.
@@ -41,91 +41,90 @@ public abstract class MapDAO extends AbstractDAO {
      * @throws SQLException
      *             the SQL exception
      */
-    public static Example getExampleById(final int id) throws SQLException {
-        final CallableStatement callStatement = prepareCall(sqlProcedureMotion);
-        Example example = null;
-        callStatement.setInt(1, id);
-        if (callStatement.execute()) {
-            final ResultSet result = callStatement.getResultSet();
-            if (result.first()) {
-                example = new Example(result.getInt(idColumnIndex), result.getString(nameColumnIndex));
-            }
-            result.close();
-        }
-        return example;
-    }
 
-    /**
-     * Gets the example by name.
-     *
-     * @param name
-     *            the name
-     * @return the example by name
-     * @throws SQLException
-     *             the SQL exception
-     */
-    public static Example getExampleByName(final String name) throws SQLException {
-        final CallableStatement callStatement = prepareCall(sqlProcedureMotionLess);
-        Example example = null;
 
-        callStatement.setString(1, name);
-        if (callStatement.execute()) {
-            final ResultSet result = callStatement.getResultSet();
-            if (result.first()) {
-                example = new Example(result.getInt(idColumnIndex), result.getString(nameColumnIndex));
-            }
-            result.close();
-        }
-        return example;
-    }
-    /*
+		 
+		 public void getMotionLessBDD(String Procedure) throws SQLException {
+		        final CallableStatement callStatement = prepareCall(Procedure);
+		        if (callStatement.execute()) {
+		            ResultSet result = callStatement.getResultSet();
+		            
+		            String fileName = "./Map/MotionLess.txt";
+			        try {
+			            // Assume default encoding.
+			            FileWriter fileWriter = new FileWriter(fileName);
 
-    /**
-     * Gets the all examples.
-     *
-     * @return the all examples
-     * @throws SQLException
-     *             the SQL exception
-     *
-    public static List<Example> getAllExamples() throws SQLException {
-        final ArrayList<Example> examples = new ArrayList<Example>();
-        final CallableStatement callStatement = prepareCall(sqlAllExamples);
-        if (callStatement.execute()) {
-            final ResultSet result = callStatement.getResultSet();
+			            // Always wrap FileWriter in BufferedWriter.
+			            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
-            for (boolean isResultLeft = result.first(); isResultLeft; isResultLeft = result.next()) {
-                examples.add(new Example(result.getInt(idColumnIndex), result.getString(nameColumnIndex)));
-            }
-            result.close();
-        }
-        return examples;
-    }
-    */
-    
-    
-    public static ResultSet getProcedureMotion(String id) {
+		            while(result.next()) {
+		                bufferedWriter.write(result.getString("Element"));
+		            }
+		            bufferedWriter.close();
+		            result.close();
+		            
+			        }catch(IOException e) {
+			            System.out.println(e.getMessage());
+			        }
+		        
+		        }
+		 }
+
+		 
+		 public void getMotionBDD(String Procedure) throws SQLException {
+		        final CallableStatement callStatement = prepareCall(Procedure);
+		        ResultSet resultSet = null;
+		        
+		        if (callStatement.execute()) {
+		            ResultSet result = callStatement.getResultSet();           
+		            String fileName = "./Map/Motion.txt";
+		            
+			        try {
+			        	
+			            // Assume default encoding.
+			            FileWriter fileWriter = new FileWriter(fileName);
+			            
+			            // Always wrap FileWriter in BufferedWriter.
+			            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+			            
+			            while(result.next()) {
+			            	bufferedWriter.write(result.getString("Element"), result.getInt("X"), result.getInt("Y"));
+			            }
+			            bufferedWriter.close();
+			            result.close();
+				        }catch(Exception ex) {
+				            System.out.println("Error writing to file"+ fileName + "'");
+				        }
+		        }
+		 }	 
+		 
+		 
+		 
+
+
+    public ResultSet getProcedureMotion(String id) {
 		return null;
-    	
+
     }
-    
-    public static ResultSet getProcedureMotionLess(String id) {
+
+    public ResultSet getProcedureMotionLess(String id) {
   		return null;
-      	
+
       }
-    
-    
-    public static void CreateMap() {
-    	
+
+
+    public void CreateMap() {
+
     }
-    
-    public static void CreateMapMotionLess() {
-    	
+
+    public void CreateMapMotionLess() {
+
     }
-    
-    public static void CreateMapMotion() {
-    	
+
+    public void CreateMapMotion() {
+
     }
-    
-    
-    
+
+
+
 }

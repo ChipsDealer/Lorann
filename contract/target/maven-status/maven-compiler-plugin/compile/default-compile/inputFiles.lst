@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\micro\Documents\GitHub\Lorann\contract\src\main\java\controller\package-info.java
 C:\Users\micro\Documents\GitHub\Lorann\contract\src\main\java\model\IModel.java
 C:\Users\micro\Documents\GitHub\Lorann\contract\src\main\java\view\package-info.java
@@ -5,3 +6,12 @@ C:\Users\micro\Documents\GitHub\Lorann\contract\src\main\java\view\IView.java
 C:\Users\micro\Documents\GitHub\Lorann\contract\src\main\java\controller\IController.java
 C:\Users\micro\Documents\GitHub\Lorann\contract\src\main\java\model\Example.java
 C:\Users\micro\Documents\GitHub\Lorann\contract\src\main\java\model\package-info.java
+=======
+C:\Users\Nathan\git\Lorann\contract\src\main\java\view\package-info.java
+C:\Users\Nathan\git\Lorann\contract\src\main\java\controller\package-info.java
+C:\Users\Nathan\git\Lorann\contract\src\main\java\model\package-info.java
+C:\Users\Nathan\git\Lorann\contract\src\main\java\view\IView.java
+C:\Users\Nathan\git\Lorann\contract\src\main\java\model\Example.java
+C:\Users\Nathan\git\Lorann\contract\src\main\java\controller\IController.java
+C:\Users\Nathan\git\Lorann\contract\src\main\java\model\IModel.java
+>>>>>>> origin/Model

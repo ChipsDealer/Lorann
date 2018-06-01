@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 C:\Users\micro\Documents\GitHub\Lorann\showboard\src\main\java\showboard\ISquare.java
 C:\Users\micro\Documents\GitHub\Lorann\showboard\src\main\java\showboard\BoardPanel.java
 C:\Users\micro\Documents\GitHub\Lorann\showboard\src\main\java\showboard\IBoard.java
 C:\Users\micro\Documents\GitHub\Lorann\showboard\src\main\java\showboard\package-info.java
 C:\Users\micro\Documents\GitHub\Lorann\showboard\src\main\java\showboard\BoardFrame.java
 C:\Users\micro\Documents\GitHub\Lorann\showboard\src\main\java\showboard\IPawn.java
+=======
+C:\Users\Nathan\git\Lorann\showboard\src\main\java\showboard\BoardPanel.java
+C:\Users\Nathan\git\Lorann\showboard\src\main\java\showboard\BoardFrame.java
+C:\Users\Nathan\git\Lorann\showboard\src\main\java\showboard\IBoard.java
+C:\Users\Nathan\git\Lorann\showboard\src\main\java\showboard\package-info.java
+C:\Users\Nathan\git\Lorann\showboard\src\main\java\showboard\IPawn.java
+C:\Users\Nathan\git\Lorann\showboard\src\main\java\showboard\ISquare.java
+>>>>>>> origin/Model

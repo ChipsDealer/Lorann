@@ -115,11 +115,18 @@ public class ViewFacade implements IView {
 		this.window = window;
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see view.IView#addListener(java.awt.event.KeyListener)
+	 */
 	public void addListener(KeyListener listener)
 	{
 		this.getWindow().addKeyListener(listener);
 	}
-	
+	/*
+	 * Display the end game message
+	 * @param bool
+	 */
 	public void endGame(boolean bool)
 	{
 		if (bool == true)
@@ -130,6 +137,15 @@ public class ViewFacade implements IView {
 		{
 			this.displayMessage("You lose !");
 		}
+	}
+	
+	/*
+	 * Close the window of the game
+	 * No parameters
+	 */
+	public void closeGame()
+	{
+		this.getWindow().setVisible(false);
 	}
 
 }

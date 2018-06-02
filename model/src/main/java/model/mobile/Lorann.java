@@ -31,7 +31,7 @@ public class Lorann extends Motion{
 		boolean bool = false;
 		
 		//Motionless verif
-		if (this.getX() >= 0 || this.getY() >= 0)
+		if (this.getX() >= 0 & this.getY() >= 0)
 		{
 			switch (motionLess[this.getY()][this.getX()].getProperty())
 			{	

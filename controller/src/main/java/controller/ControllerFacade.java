@@ -79,7 +79,11 @@ public class ControllerFacade implements IController, KeyListener {
     	{
     		this.getView().endGame(true);
     	}
-    	this.getView().endGame(false);
+    	else
+    	{
+        	this.getView().endGame(false);
+    	}
+    	this.getView().closeGame();
     }
 
     /**

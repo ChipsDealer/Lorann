@@ -26,4 +26,7 @@ public interface IView {
     
     public void endGame(boolean bool);
     
+	public void closeGame();
+
+    
 }

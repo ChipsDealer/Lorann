@@ -99,6 +99,7 @@ public abstract class MotionLessFactory {
 		        		{
 		        			MotionLessFactory.motionLess[i][j] = MotionLessFactory.TREASURE;
 		        		}
+		        	break;
 		        		
 	        		case '#':
 		        		{

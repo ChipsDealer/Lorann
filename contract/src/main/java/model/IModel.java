@@ -46,4 +46,8 @@ public interface IModel {
 	public int[][] convertMotionMapDimension();
 	
 	public void respawn();
+	
+	public void lorannAction(boolean bool);
+	
+	public boolean getLorannAction();
 }

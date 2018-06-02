@@ -27,6 +27,7 @@ public abstract class Motion extends Element {
 		this.setY(y);
 		this.setSprite(sprite);
 		this.setProperty(property);
+		this.setLast_statement(Last_statement.NOP);
 	
 	}
 	 /**
@@ -36,6 +37,8 @@ public abstract class Motion extends Element {
      */
 	public void die() {
 		this.alive = false;
+		this.setX(-1);
+		this.setY(-1);
 	}
 	 /**
      * move the element 
@@ -58,7 +61,7 @@ public abstract class Motion extends Element {
        */
 	public void moveUp() {
 		this.setY(this.getY() -1);
-		setLast_statement(Last_statement.UP);
+		this.setLast_statement(Last_statement.UP);
 	}
 	
 	 /**
@@ -69,7 +72,7 @@ public abstract class Motion extends Element {
 	public void moveUpRight() {
 		this.setY(this.getY() -1);
 		this.setX(this.getX() +1);
-		setLast_statement(Last_statement.UPRIGHT);
+		this.setLast_statement(Last_statement.UPRIGHT);
 	}
 	
 	 /**
@@ -80,7 +83,7 @@ public abstract class Motion extends Element {
 	public void moveUpLeft() {
 		this.setY(this.getY() -1);
 		this.setX(this.getX() -1);
-		setLast_statement(Last_statement.UPLEFT);
+		this.setLast_statement(Last_statement.UPLEFT);
 	}
 	
 	 /**
@@ -90,7 +93,7 @@ public abstract class Motion extends Element {
        */
 	public void moveDown() {
 		this.setY(this.getY() +1);
-		setLast_statement(Last_statement.DOWN);
+		this.setLast_statement(Last_statement.DOWN);
 	}
 	
 	 /**
@@ -101,7 +104,7 @@ public abstract class Motion extends Element {
 	public void moveDownRight() {
 		this.setY(this.getY() +1);
 		this.setX(this.getX() +1);
-		setLast_statement(Last_statement.DOWNRIGHT);
+		this.setLast_statement(Last_statement.DOWNRIGHT);
 	}
 	
 	 /**
@@ -112,7 +115,7 @@ public abstract class Motion extends Element {
 	public void moveDownLeft() {
 		this.setY(this.getY() +1);
 		this.setX(this.getX() -1);
-		setLast_statement(Last_statement.DOWNLEFT);
+		this.setLast_statement(Last_statement.DOWNLEFT);
 	}
 	
 	 /**
@@ -122,7 +125,7 @@ public abstract class Motion extends Element {
        */
 	public void moveLeft() {
 		this.setX(this.getX() -1);
-		setLast_statement(Last_statement.LEFT);
+		this.setLast_statement(Last_statement.LEFT);
 	}
 	 /**
      * move the element to the right
@@ -131,13 +134,11 @@ public abstract class Motion extends Element {
        */
 	public void moveRight() {
 		this.setX(this.getX() +1);
-		setLast_statement(Last_statement.RIGHT);
+		this.setLast_statement(Last_statement.RIGHT);
 	}
 	
 	public void doNothing() {
-		this.setX(this.getX());
-		this.setY(this.getY());
-		setLast_statement(Last_statement.NOP);
+		this.setLast_statement(Last_statement.NOP);
 	}
 	
 	

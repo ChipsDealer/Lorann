@@ -13,24 +13,19 @@ import model.motionLess.MotionLess;
 
 public class Spell extends Motion {
 
-	private static final Sprite SPRITESPELL = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\SPELLGREEN.png", '°'); // Change sprite
-	private int x;
-	private int y;
-	private Last_statement last_statement;
-	@SuppressWarnings("unused")
-	private boolean alive;
+	private static final Sprite SPRITESPELL = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\fireball_1.png", 'O'); // Change sprite
 	
 	
 	public Spell(int x,int y) {
 		super(x, y,SPRITESPELL, Property.SPELL);
-		this.alive = false;
+		this.setAlive(false);
 		}
 
 	public boolean collision(Motion motion[], MotionLess motionLess[][]) {
 		boolean bool = false;
 		
 		//Motionless verif
-		switch (motionLess[this.y][this.x].getProperty())
+		switch (motionLess[this.getY()][this.getX()].getProperty())
 		{	
 			case BLOCKING_WITH_ACTION : 
 				{
@@ -48,33 +43,35 @@ public class Spell extends Motion {
 			{
 				bool = true;	// Treasure or energicbubble
 			}
+			break;
+			
 			default:
 			{
 				bool = false ;
 			}
 		}
 		//Motion verif
-		if (this.x == motion[1].getX() & this.y == motion[1].getY())
+		if (this.getX() == motion[1].getX() & this.getY() == motion[1].getY())
 		{
 			motion[1].die(); //Demon die
 			bool = false;
 		}
-		else if (this.x == motion[2].getX() & this.y == motion[2].getY())
+		else if (this.getX() == motion[2].getX() & this.getY() == motion[2].getY())
 		{
 			motion[2].die(); //Kyracj die
 			bool = false;
 		}
-		else if (this.x == motion[3].getX() & this.y == motion[3].getY())
+		else if (this.getX() == motion[3].getX() & this.getY() == motion[3].getY())
 		{
 			motion[3].die(); //Kyracj die
 			bool = false;
 		}
-		else if (this.x == motion[4].getX() & this.y == motion[4].getY())
+		else if (this.getX() == motion[4].getX() & this.getY() == motion[4].getY())
 		{
 			motion[4].die(); //Kyracj die
 			bool = false;
 		}
-		else if (this.x == motion[0].getX() & this.y == motion[0].getY())
+		else if (this.getX() == motion[0].getX() & this.getY() == motion[0].getY())
 		{
 			this.die(); //Spell die
 			bool = false;
@@ -87,67 +84,47 @@ public class Spell extends Motion {
 	}
 
 	@Override
-	public void move(Motion motion[], MotionLess motionLess[][]) {
-		if (this.last_statement == Last_statement.UP) {
+	public void move(Motion motion[], MotionLess motionLess[][]) 
+	{
+		if (this.getLast_statement() == Last_statement.UP) 
+		{
 			super.moveUp();
 			if(collision(motion, motionLess) == true)
 			{
-				super.moveDown();			
+				super.moveDown();
+				super.moveDown();
 			}
 		}
-		else {
+		
+		else if (this.getLast_statement() == Last_statement.DOWN) 
+		{
 			super.moveDown();
 			if(collision(motion, motionLess) == true)
 			{
-				super.moveUp();			
+				super.moveUp();
+				super.moveUp();
 			}
 		}
-		
-		if (this.last_statement == Last_statement.DOWN) {
-			super.moveDown();
-			if(collision(motion, motionLess) == true)
-			{
-				super.moveUp();			
-			}
-		}
-		else {
-			super.moveUp();
-			if(collision(motion, motionLess) == true)
-			{
-				super.moveDown();			
-			}
-		}
-		if (this.last_statement == Last_statement.RIGHT) {
+
+		else if (this.getLast_statement() == Last_statement.RIGHT) 
+		{
 			super.moveRight();
 			if(collision(motion, motionLess) == true)
 			{
-				super.moveLeft();			
+				super.moveLeft();
+				super.moveLeft();
 			}
 		}
-		else {
+		
+		else if (this.getLast_statement() == Last_statement.LEFT ) 
+		{
 			super.moveLeft();
 			if(collision(motion, motionLess) == true)
 			{
-				super.moveRight();			
+				super.moveRight();
+				super.moveRight();
 			}
 		}
-		
-		if (this.last_statement == Last_statement.LEFT) {
-			super.moveLeft();
-			if(collision(motion, motionLess) == true)
-			{
-				super.moveRight();			
-			}
-		}
-		else {
-			super.moveRight();
-			if(collision(motion, motionLess) == true)
-			{
-				super.moveLeft();			
-			}
-		}
-		
-		
 		
 	}
 

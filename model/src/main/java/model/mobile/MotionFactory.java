@@ -78,15 +78,6 @@ public abstract class MotionFactory {
         			}
         		}
         }
-       /* 
-        for (int i = 0; i < 6; i++)
-        {
-        	System.out.println("A l'indice : " + i + MotionFactory.motion[i].getSprite().getId());
-			System.out.println(MotionFactory.motion[i].getX());
-			System.out.println(MotionFactory.motion[i].getY());
-			System.out.println(MotionFactory.motion[i].isAlive() + "\n\n");
-        }
-        */
         buff.close();
 	}
 	

@@ -14,22 +14,17 @@ public class Arrbarr extends Motion {
 
 	//* All the Constant**/
 	private static final Sprite SPRITEMONSTER3 = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\monster_3.png", 'M');
-	private int x;
-	private int y;
-	private Last_statement last_statement;
-	@SuppressWarnings("unused")
-	private boolean alive;
 	
 	public Arrbarr(int x,int y) {
 		super(x, y, SPRITEMONSTER3, Property.DEMONS);
-		this.alive = false;
+		this.setAlive(false);
 	}
 	
 	public boolean collision(Motion motion[], MotionLess motionLess[][]) {
 		boolean bool = false;
 		
 		//Motionless verif
-		switch (motionLess[this.y][this.x].getProperty())
+		switch (motionLess[this.getY()][this.getX()].getProperty())
 		{	
 			case BLOCKING_WITH_ACTION : 
 				{
@@ -47,18 +42,20 @@ public class Arrbarr extends Motion {
 			{
 				bool = true;	// Treasure or energicbubble
 			}
+			break;
+			
 			default:
 			{
 				bool = false ;
 			}
 		}
 		//Motion verif
-		if (this.x == motion[0].getX() & this.y == motion[0].getY())
+		if (this.getX() == motion[0].getX() & this.getY() == motion[0].getY())
 		{
 			motion[0].die();
 			bool = false;
 		}
-		else if (this.x == motion[5].getX() & this.y == motion[5].getY())
+		else if (this.getX() == motion[5].getX() & this.getY() == motion[5].getY())
 		{
 			motion[3].die(); //Arrbarr die
 			bool = false;
@@ -77,7 +74,7 @@ public class Arrbarr extends Motion {
 
 	@Override
 	public void move(Motion motion[], MotionLess motionLess[][]) {
-		if (this.last_statement == Last_statement.UP || this.last_statement == Last_statement.NOP) {
+		if (this.getLast_statement() == Last_statement.UP || this.getLast_statement() == Last_statement.NOP) {
 				super.moveUp();
 			if(collision(motion, motionLess) == true)
 				{
@@ -95,7 +92,7 @@ public class Arrbarr extends Motion {
 							}
 				}
 		}
-		else if (this.last_statement == Last_statement.RIGHT)
+		else if (this.getLast_statement() == Last_statement.RIGHT)
 		{
 			super.moveRight();
 				if(collision(motion, motionLess) == true)
@@ -114,7 +111,7 @@ public class Arrbarr extends Motion {
 								}
 					}
 		}
-		else if	(this.last_statement == Last_statement.LEFT)	
+		else if	(this.getLast_statement() == Last_statement.LEFT)	
 		{
 			super.moveLeft();
 				if(collision(motion, motionLess) == true)
@@ -124,30 +121,30 @@ public class Arrbarr extends Motion {
 							if(collision(motion, motionLess) == true)
 								{
 									super.moveDown();
-									super.moveLeft();
+									super.moveRight();
 										if(collision(motion, motionLess) == true)
 											{
-												super.moveRight();
+												super.moveLeft();
 												super.moveDown();
 											}
 								}
 					}
 		}
-		else if (this.last_statement == Last_statement.DOWN)
+		else if (this.getLast_statement() == Last_statement.DOWN)
 		{
 			super.moveDown();
 				if(collision(motion, motionLess) == true)
 					{	
 						super.moveUp();
-						super.moveRight();
+						super.moveLeft();
 							if(collision(motion, motionLess) == true)
 								{
-									super.moveLeft();
+									super.moveRight();
 									super.moveUp();
 										if(collision(motion, motionLess) == true)
 											{
 												super.moveDown();
-												super.moveLeft();
+												super.moveRight();
 											}
 								}
 					}

@@ -95,9 +95,12 @@ public class ModelFacade implements IModel {
 	
 	public void moveMobile()
 	{
-		for (int i = 1; i <= 5; i++)
+		for (int i = 1; i < 6; i++)
 		{
-			this.getMotion()[i].move(this.getMotion(), this.getMotionLess());
+			if (this.getMotion()[i].isAlive() == true)
+			{
+				this.getMotion()[i].move(this.getMotion(), this.getMotionLess());
+			}
 		}
 	}
 	
@@ -160,10 +163,6 @@ public class ModelFacade implements IModel {
 				}
 				
 		}
-		for (int i = 0; i < 6; i++)
-        {
-        	System.out.println("A l'indice : " + i + " " + motionMapDimension[i][0] + " " + motionMapDimension[i][1]);
-        }
 	return motionMapDimension;
 	}
 	
@@ -172,6 +171,33 @@ public class ModelFacade implements IModel {
 	{
 		HUD.lessLifes();
 		this.loadMap();
+		HUD.setScore(0);
+	}
+	
+	public void lorannAction(boolean bool)
+	{
+		if (bool == false)
+		{
+			this.getMotion()[5].setAlive(false);
+
+		}
+		else
+		{
+			if (this.getLorannAction() == false)
+			{
+				this.getMotion()[5].setX(this.getMotion()[0].getX() + 1);
+				this.getMotion()[5].setY(this.getMotion()[0].getY() + 1);
+				this.getMotion()[5].setLast_statement(this.getMotion()[0].getLast_statement());
+				System.out.println(this.getMotion()[0].getLast_statement());
+				System.out.println(this.getMotion()[5].getLast_statement());
+				this.getMotion()[5].setAlive(true);
+			}
+		}
+	}
+	
+	public boolean getLorannAction()
+	{
+		return this.getMotion()[5].isAlive();
 	}
 	
 }

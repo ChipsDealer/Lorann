@@ -15,22 +15,17 @@ public class Cargyv extends Motion {
 
 	//* All the Constant**/
 	private static final Sprite SPRITEMONSTER2 = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\monster_2.png", 'E');
-	private int x;
-	private int y;
-	private Last_statement last_statement;
-	@SuppressWarnings("unused")
-	private boolean alive;
 	
 	public Cargyv(int x,int y) {
 		super(x , y,SPRITEMONSTER2 , Property.DEMONS);
-		this.alive = false;
+		this.setAlive(false);
 	}
 	
 	public boolean collision(Motion motion[], MotionLess motionLess[][]) {
 		boolean bool = false;
 		
 		//Motionless verif
-		switch (motionLess[this.y][this.x].getProperty())
+		switch (motionLess[this.getY()][this.getX()].getProperty())
 		{	
 			case BLOCKING_WITH_ACTION : 
 				{
@@ -54,12 +49,12 @@ public class Cargyv extends Motion {
 			}
 		}
 		//Motion verif
-		if (this.x == motion[0].getX() & this.y == motion[0].getY())
+		if (this.getX() == motion[0].getX() & this.getY() == motion[0].getY())
 		{
 			motion[0].die();
 			bool = false;
 		}
-		else if (this.x == motion[5].getX() & this.y == motion[5].getY())
+		else if (this.getX() == motion[5].getX() & this.getY() == motion[5].getY())
 		{
 			motion[2].die(); //Cargyv die
 			bool = false;
@@ -83,18 +78,20 @@ public class Cargyv extends Motion {
 	@Override
 	//patern for Cargyv
 	public void move(Motion motion[], MotionLess motionLess[][]) {
-		if (this.last_statement == Last_statement.RIGHT || this.last_statement == Last_statement.NOP) {
+		if (this.getLast_statement() == Last_statement.RIGHT || this.getLast_statement() == Last_statement.NOP) {
 			super.moveRight();
 			if(collision(motion, motionLess) == true)
 			{
-				super.moveLeft();			
+				super.moveLeft();		
+				super.moveLeft();
 			}
 		}
 		else {
 			super.moveLeft();
 			if(collision(motion, motionLess) == true)
 			{
-				super.moveRight();			
+				super.moveRight();
+				super.moveRight();
 			}
 		}
 	}

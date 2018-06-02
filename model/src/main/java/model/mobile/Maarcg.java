@@ -15,16 +15,10 @@ public class Maarcg extends Motion {
 	
 	//** Constant SPRITE **/
 	private static final Sprite SPRITEMONSTER4 = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\monster_4.png", 'N');
-	private int x;
-	private int y;
-	@SuppressWarnings("unused")
-	private Last_statement last_statement;
-	@SuppressWarnings("unused")
-	private boolean alive;
 	
 	public Maarcg(int x,int y) {
 		super(x, y,SPRITEMONSTER4, Property.DEMONS);
-		this.alive = false;
+		this.setAlive(false);
 	}
 
 	
@@ -33,7 +27,7 @@ public class Maarcg extends Motion {
 		boolean bool = false;
 		
 		//Motionless verif
-		switch (motionLess[this.y][this.x].getProperty())
+		switch (motionLess[this.getY()][this.getX()].getProperty())
 		{	
 			case BLOCKING_WITH_ACTION : 
 				{
@@ -57,12 +51,12 @@ public class Maarcg extends Motion {
 			}
 		}
 		//Motion verif
-		if (this.x == motion[0].getX() & this.y == motion[0].getY())
+		if (this.getX() == motion[0].getX() & this.getY() == motion[0].getY())
 		{
 			motion[0].die();
 			bool = false;
 		}
-		else if (this.x == motion[5].getX() & this.y == motion[5].getY())
+		else if (this.getX() == motion[5].getX() & this.getY() == motion[5].getY())
 		{
 			motion[4].die(); //Maarcg die
 			bool = false;
@@ -82,7 +76,7 @@ public class Maarcg extends Motion {
 		Random r = new Random();
 		int minValue = 1;
 		int maxValue = 5;
-		int value = minValue + r.nextInt(maxValue - minValue);	
+		int value = minValue + r.nextInt(maxValue - minValue);
 		boolean bool = true;
 		
 		while (bool != false)
@@ -94,10 +88,10 @@ public class Maarcg extends Motion {
 			{
 			case 1:
 				{
-					super.moveUp();
+					super.moveRight();
 					if (collision(motion, motionLess) == true)
 					{
-						super.moveDown();
+						super.moveLeft();
 					}
 					else
 					{
@@ -147,11 +141,6 @@ public class Maarcg extends Motion {
 				}
 			}
 			break;
-			
-			default:
-				{
-					bool = true;
-				}
 			}
 			
 		}

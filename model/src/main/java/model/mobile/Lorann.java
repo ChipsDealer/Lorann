@@ -21,69 +21,65 @@ public class Lorann extends Motion{
 	private static final Sprite SPRITEU = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\lorann_u.png", 'L');
 	private static final Sprite SPRITEUL = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\lorann_ul.png", 'L');
 	private static final Sprite SPRITEUR = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\lorann_ur.png", 'L');
-	private int x;
-	private int y;
-	@SuppressWarnings("unused")
-	private Last_statement last_statement;
-	@SuppressWarnings("unused")
-	private boolean alive;
 	
 	public Lorann(int x,int y) {
 		super(x, y, SPRITEB, Property.LORANN); 
-		this.alive = false;
+		this.setAlive(false);
 	
 	}
 	public boolean collision(Motion motion[], MotionLess motionLess[][]) {
 		boolean bool = false;
 		
 		//Motionless verif
-		switch (motionLess[this.y][this.x].getProperty())
+		switch (motionLess[this.getY()][this.getX()].getProperty())
 		{	
-			case BLOCKING_WITH_ACTION : //BadDoor
+			case BLOCKING_WITH_ACTION: //BadDoor
 				{
 					this.die(); //Lorann die
 					bool = false;
 				}
 			break;
 			
-			case  BLOCKING_WITHOUT_ACTION:
+			case BLOCKING_WITHOUT_ACTION:
 				{
 				bool = true;
 				}
 			break;
 			
-			case PENETRABLE_WITH_ACTION :
+			case PENETRABLE_WITH_ACTION:
 			{
 				bool = false;	// Treasure or energicbubble
-				motionLess[this.y][this.x].action(motion, motionLess); //get the action of the element
+				motionLess[this.getY()][this.getX()].action(motion, motionLess); //get the action of the element
 			}
+			break;
+			
 			default:
 			{
 				bool = false ;
 			}
 		}
 		//Motion verif
-		if (this.x == motion[1].getX() & this.y == motion[1].getY())
+		if (this.getX() == motion[1].getX() & this.getY() == motion[1].getY())
 		{
 			this.die(); //Lorann die
 			bool = false;
 		}
-		else if (this.x == motion[2].getX() & this.y == motion[2].getY())
+		else if (this.getX() == motion[2].getX() & this.getY() == motion[2].getY())
 		{
 			this.die(); //Lorann die
 			bool = false;
 		}
-		else if (this.x == motion[3].getX() & this.y == motion[3].getY())
+		else if (this.getX() == motion[3].getX() & this.getY() == motion[3].getY())
 		{
 			this.die(); //Lorann die
 			bool = false;
 		}
-		else if (this.x == motion[4].getX() & this.y == motion[4].getY())
+		else if (this.getX() == motion[4].getX() & this.getY() == motion[4].getY())
 		{
 			this.die(); //Lorann die
 			bool = false;
 		}
-		else if (this.x == motion[0].getX() & this.y == motion[0].getY())
+		else if (this.getX() == motion[5].getX() & this.getY() == motion[5].getY())
 		{
 			motion[5].die(); //Spell die
 			bool = false;
@@ -110,7 +106,7 @@ public class Lorann extends Motion{
 					moveUp();
 					if(collision(motion, motionLess) == true)
 						{
-						moveDown();						
+						moveDown();					
 						}
 				}
 				break;
@@ -164,6 +160,7 @@ public class Lorann extends Motion{
 						}
 				}
 				break;
+				
 				case "Left" :
 				{
 					moveLeft();
@@ -173,6 +170,7 @@ public class Lorann extends Motion{
 						}
 				}
 				break;
+				
 				case "Right" : 
 				{
 					moveRight();
@@ -181,6 +179,8 @@ public class Lorann extends Motion{
 						moveLeft();						
 						}
 				}
+				break;
+				
 				default :
 				{
 					doNothing();

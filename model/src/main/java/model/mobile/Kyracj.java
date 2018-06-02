@@ -14,15 +14,10 @@ public class Kyracj extends Motion {
 	
 	//** Constant SPRITE **/
 	private static final Sprite SPRITEMONSTER1 = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\monster_1.png", 'D');
-	private int x;
-	private int y;
-	private Last_statement last_statement;
-	@SuppressWarnings("unused")
-	private boolean alive;
 	
 	public Kyracj(int x,int y) {
 		super(x, y, SPRITEMONSTER1, Property.DEMONS);
-		this.alive = false;
+		this.setAlive(false);
 	}
 	
 	/*
@@ -32,18 +27,20 @@ public class Kyracj extends Motion {
 	
 	// Pattern for Kyracj
 	public void move(Motion motion[], MotionLess motionLess[][]) {
-			if (this.last_statement == Last_statement.UP || this.last_statement == Last_statement.NOP) {
+			if (this.getLast_statement() == Last_statement.UP || this.getLast_statement() == Last_statement.NOP) {
 				super.moveUp();
 				if(collision(motion, motionLess) == true)
 				{
-					super.moveDown();			
+					super.moveDown();
+					super.moveDown();
 				}
 			}
 			else {
 				super.moveDown();
 				if(collision(motion, motionLess) == true)
 				{
-					super.moveUp();			
+					super.moveUp();	
+					super.moveUp();
 				}
 			}
 		}
@@ -53,7 +50,7 @@ public class Kyracj extends Motion {
 		boolean bool = false;
 		
 		//Motionless verif
-		switch (motionLess[this.y][this.x].getProperty())
+		switch (motionLess[this.getY()][this.getX()].getProperty())
 		{	
 			case BLOCKING_WITH_ACTION : 
 				{
@@ -77,13 +74,14 @@ public class Kyracj extends Motion {
 			}
 		}
 		//Motion verif
-		if (this.x == motion[0].getX() & this.y == motion[0].getY())
+		if (this.getX() == motion[0].getX() & this.getY() == motion[0].getY())
 		{
 			motion[0].die();
 			bool = false;
 		}
-		else if (this.x == motion[5].getX() & this.y == motion[5].getY())
+		else if (this.getX() == motion[5].getX() & this.getY() == motion[5].getY())
 		{
+			System.out.println(this.getX() + " et " + motion[5].getX());
 			motion[1].die(); //Kyracj die
 			bool = false;
 		}

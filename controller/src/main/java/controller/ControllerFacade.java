@@ -22,6 +22,8 @@ public class ControllerFacade implements IController, KeyListener {
     private final IModel model;
     
     private String lorannDir;
+    
+    private boolean isLorannActionAlive;
 
     /**
      * Instantiates a new controller facade.
@@ -47,8 +49,8 @@ public class ControllerFacade implements IController, KeyListener {
     {
     	this.getModel().createMap();
     	this.getModel().loadMap();
-    	//this.getView().addListener(this);
     	this.getView().createDisplay(this.getModel().convertMotionMapDimension(), this.getModel().convertMotionMapImages(), this.getModel().convertMotionLessMap(), this.getModel().getScore(), this.getModel().getLifes(), this.getModel().getMapX(), this.getModel().getMapY());
+    	this.getView().addListener(this);
     	runGame();
     }
     
@@ -56,18 +58,22 @@ public class ControllerFacade implements IController, KeyListener {
     {
     	while (this.getModel().isGameRunning() == true & this.getModel().getLifes() > 0)
     	{
-    		this.getView().showDisplay(this.getModel().convertMotionMapDimension(), this.getModel().convertMotionMapImages(), this.getModel().convertMotionLessMap(), this.getModel().getScore(), this.getModel().getLifes());
+    		this.isLorannActionAlive = this.getModel().getLorannAction();
+    		this.lorannDir = "nop";
     		Thread.sleep(500);
     		if (this.getModel().isLorannAlive() == true)
     		{
     			this.getModel().moveMobile();
-    			//this.getModel().moveLorann(this.lorannDir);
+    			this.getModel().moveLorann(this.lorannDir);
+    			this.getModel().lorannAction(this.isLorannActionAlive);
+    			
     			
     		}
     		else
     		{
     			this.getModel().respawn();
     		}
+    		this.getView().showDisplay(this.getModel().convertMotionMapDimension(), this.getModel().convertMotionMapImages(), this.getModel().convertMotionLessMap(), this.getModel().getScore(), this.getModel().getLifes());
     	}
     }
 
@@ -103,7 +109,73 @@ public class ControllerFacade implements IController, KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
+		char direction = e.getKeyChar();
+		switch (direction) 
+		{
+			case '8':
+			{
+				this.lorannDir = "Up";
+			}
+			break;
+			
+			case '2':
+			{
+				this.lorannDir = "Down";
+			}
+			break;
+			
+			case '6':
+			{
+				this.lorannDir = "Right";
+			}
+			break;
+			
+			case '4':
+			{
+				this.lorannDir = "Left";
+			}
+			break;
+
+			case '9':
+			{
+				this.lorannDir = "UpRight";
+			}
+			break;
+			
+			case '7':
+			{
+				this.lorannDir = "UpLeft";
+			}
+			break;
+			
+			case '1':
+			{
+				this.lorannDir = "DownLeft";
+			}
+			break;
+			
+			case '3':
+			{
+				this.lorannDir = "DownRight";
+			}
+			break;
+			
+			case '5':
+			{
+				if (this.isLorannActionAlive == true)
+				{
+					this.isLorannActionAlive = false;
+				}
+				else
+				{
+					this.isLorannActionAlive = true;
+				}
+			}
+			break;
+			
+			default:
+				this.lorannDir = "nop";
+			break;
+		}
 	}
 }

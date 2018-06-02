@@ -1,6 +1,8 @@
 package model.mobile;
 
 
+import java.util.Random;
+
 import model.*;
 import model.motionLess.MotionLess;
 
@@ -12,12 +14,11 @@ import model.motionLess.MotionLess;
  */
 
 public class Spell extends Motion {
-
-	private static final Sprite SPRITESPELL = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\fireball_1.png", 'O'); // Change sprite
 	
+	private static final Sprite SPRITESPELL1 = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\fireball_1.png", 'O'); // Change sprite
 	
 	public Spell(int x,int y) {
-		super(x, y,SPRITESPELL, Property.SPELL);
+		super(x, y,SPRITESPELL1, Property.SPELL);
 		this.setAlive(false);
 		}
 
@@ -71,6 +72,7 @@ public class Spell extends Motion {
 			motion[4].die(); //Kyracj die
 			bool = false;
 		}
+		//Colision with Lorann : WIP this feature don't work properly
 		else if (this.getX() == motion[0].getX() & this.getY() == motion[0].getY())
 		{
 			this.die(); //Spell die
@@ -94,6 +96,7 @@ public class Spell extends Motion {
 				super.moveDown();
 				super.moveDown();
 			}
+			this.setSprite(new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\fireball_" + setRandomSprite() + ".png", 'O'));
 		}
 		
 		else if (this.getLast_statement() == Last_statement.DOWN) 
@@ -104,6 +107,7 @@ public class Spell extends Motion {
 				super.moveUp();
 				super.moveUp();
 			}
+			this.setSprite(new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\fireball_" + setRandomSprite() + ".png", 'O'));
 		}
 
 		else if (this.getLast_statement() == Last_statement.RIGHT) 
@@ -114,6 +118,7 @@ public class Spell extends Motion {
 				super.moveLeft();
 				super.moveLeft();
 			}
+			this.setSprite(new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\fireball_" + setRandomSprite() + ".png", 'O'));
 		}
 		
 		else if (this.getLast_statement() == Last_statement.LEFT ) 
@@ -124,6 +129,7 @@ public class Spell extends Motion {
 				super.moveRight();
 				super.moveRight();
 			}
+			this.setSprite(new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\fireball_" + setRandomSprite() + ".png", 'O'));
 		}
 		
 	}
@@ -132,5 +138,14 @@ public class Spell extends Motion {
 	public void move(Motion[] motion, MotionLess[][] motionLess, String dir) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	private int setRandomSprite()
+	{
+		Random r = new Random();
+		int minValue = 1;
+		int maxValue = 6;
+		int value = minValue + r.nextInt(maxValue - minValue);
+		return value;
 	}
 }

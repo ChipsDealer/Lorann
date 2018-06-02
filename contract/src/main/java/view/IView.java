@@ -24,4 +24,6 @@ public interface IView {
     
     public void addListener(KeyListener listener);
     
+    public void endGame(boolean bool);
+    
 }

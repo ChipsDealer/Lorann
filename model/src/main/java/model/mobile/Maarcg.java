@@ -45,6 +45,8 @@ public class Maarcg extends Motion {
 			{
 				bool = true;	// Treasure or energicbubble
 			}
+			break;
+			
 			default:
 			{
 				bool = false ;

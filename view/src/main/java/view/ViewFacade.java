@@ -119,5 +119,17 @@ public class ViewFacade implements IView {
 	{
 		this.getWindow().addKeyListener(listener);
 	}
+	
+	public void endGame(boolean bool)
+	{
+		if (bool == true)
+		{
+			this.displayMessage("You win !");
+		}
+		else
+		{
+			this.displayMessage("You lose !");
+		}
+	}
 
 }

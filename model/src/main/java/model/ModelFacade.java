@@ -3,6 +3,7 @@ package model;
 import java.awt.Point;
 import java.sql.ResultSet;
 import model.dao.MapDAO;
+import model.mobile.Last_statement;
 import model.mobile.Motion;
 import model.mobile.MotionFactory;
 import model.motionLess.MotionLess;
@@ -185,11 +186,9 @@ public class ModelFacade implements IModel {
 		{
 			if (this.getLorannAction() == false)
 			{
-				this.getMotion()[5].setX(this.getMotion()[0].getX() + 1);
-				this.getMotion()[5].setY(this.getMotion()[0].getY() + 1);
 				this.getMotion()[5].setLast_statement(this.getMotion()[0].getLast_statement());
-				System.out.println(this.getMotion()[0].getLast_statement());
-				System.out.println(this.getMotion()[5].getLast_statement());
+				this.getMotion()[5].setX(this.getMotion()[0].getX());
+				this.getMotion()[5].setY(this.getMotion()[0].getY());
 				this.getMotion()[5].setAlive(true);
 			}
 		}

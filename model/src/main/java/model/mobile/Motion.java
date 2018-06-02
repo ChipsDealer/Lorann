@@ -37,8 +37,8 @@ public abstract class Motion extends Element {
      */
 	public void die() {
 		this.alive = false;
-		this.setX(-1);
-		this.setY(-1);
+		this.setX(0);
+		this.setY(0);
 	}
 	 /**
      * move the element 
@@ -138,7 +138,6 @@ public abstract class Motion extends Element {
 	}
 	
 	public void doNothing() {
-		this.setLast_statement(Last_statement.NOP);
 	}
 	
 	

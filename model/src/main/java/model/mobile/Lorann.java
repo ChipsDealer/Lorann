@@ -31,33 +31,37 @@ public class Lorann extends Motion{
 		boolean bool = false;
 		
 		//Motionless verif
-		switch (motionLess[this.getY()][this.getX()].getProperty())
-		{	
-			case BLOCKING_WITH_ACTION: //BadDoor
+		if (this.getX() >= 0 || this.getY() >= 0)
+		{
+			switch (motionLess[this.getY()][this.getX()].getProperty())
+			{	
+				case BLOCKING_WITH_ACTION: //BadDoor
+					{
+						this.die(); //Lorann die
+						bool = false;
+					}
+				break;
+				
+				case BLOCKING_WITHOUT_ACTION:
+					{
+					bool = true;
+					}
+				break;
+				
+				case PENETRABLE_WITH_ACTION:
 				{
-					this.die(); //Lorann die
-					bool = false;
+					bool = false;	// Treasure or energicbubble
+					motionLess[this.getY()][this.getX()].action(motion, motionLess); //get the action of the element
 				}
-			break;
-			
-			case BLOCKING_WITHOUT_ACTION:
+				break;
+				
+				default:
 				{
-				bool = true;
+					bool = false ;
 				}
-			break;
-			
-			case PENETRABLE_WITH_ACTION:
-			{
-				bool = false;	// Treasure or energicbubble
-				motionLess[this.getY()][this.getX()].action(motion, motionLess); //get the action of the element
-			}
-			break;
-			
-			default:
-			{
-				bool = false ;
 			}
 		}
+		
 		//Motion verif
 		if (this.getX() == motion[1].getX() & this.getY() == motion[1].getY())
 		{
@@ -79,6 +83,7 @@ public class Lorann extends Motion{
 			this.die(); //Lorann die
 			bool = false;
 		}
+		//Colision with Lorann : WIP this feature don't work properly
 		else if (this.getX() == motion[5].getX() & this.getY() == motion[5].getY())
 		{
 			motion[5].die(); //Spell die

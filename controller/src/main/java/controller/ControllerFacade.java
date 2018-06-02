@@ -63,9 +63,9 @@ public class ControllerFacade implements IController, KeyListener {
     		Thread.sleep(500);
     		if (this.getModel().isLorannAlive() == true)
     		{
+    			this.getModel().lorannAction(this.isLorannActionAlive);
     			this.getModel().moveMobile();
     			this.getModel().moveLorann(this.lorannDir);
-    			this.getModel().lorannAction(this.isLorannActionAlive);
     			
     			
     		}
@@ -75,6 +75,11 @@ public class ControllerFacade implements IController, KeyListener {
     		}
     		this.getView().showDisplay(this.getModel().convertMotionMapDimension(), this.getModel().convertMotionMapImages(), this.getModel().convertMotionLessMap(), this.getModel().getScore(), this.getModel().getLifes());
     	}
+    	if (this.getModel().getLifes() > 0)
+    	{
+    		this.getView().endGame(true);
+    	}
+    	this.getView().endGame(false);
     }
 
     /**

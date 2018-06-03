@@ -14,7 +14,8 @@ public abstract class MotionLess extends Element{
 	 * @param property
 	 * 				the property
 	 * 
-	 * @author Léo Thommes
+	 * @author Nathan Beer nathan.beer@viacesi.fr, Léo Thommes leo.thommes@cesi.fr, Frost
+	 * @version 1.0
 	 * @return
 	 */
 	
@@ -22,6 +23,10 @@ public abstract class MotionLess extends Element{
 		super(sprite, property);
 	}
 	
+	/*
+	 * The action of the MotionLess element
+	 * @param motion, motionLess
+	 */
 	public void action(Motion[] motion, MotionLess[][] motionLess) {
 		
 	}

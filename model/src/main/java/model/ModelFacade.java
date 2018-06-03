@@ -14,8 +14,9 @@ import model.HUD;
 /**
  * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
  *
- * @author Léo Thommes leo.thommes@cesi.fr
+ * @author Nathan Beer nathan.beer@viacesi.fr, Frost
  * @version 1.0
+ * @since jdk1.8.0_171
  */
 public class ModelFacade implements IModel {
 
@@ -29,22 +30,34 @@ public class ModelFacade implements IModel {
     	
     }
     
-	
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#getProcedureMotion(java.lang.String)
+	 */
 	public ResultSet getProcedureMotion(final String id){
 		return MapDAO.getProcedureMotion(id);
 	}
 
-	
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#getProcedureMotionLess(java.lang.String)
+	 */
 	public ResultSet getProcedureMotionLess(final String id){
 		return MapDAO.getProcedureMotionLess(id);
 	}
 
-	
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#createMap()
+	 */
 	public void createMap() {
 		
 	}
 	
-
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#loadMap()
+	 */
 	public void loadMap() {
 		try {
 			MotionFactory.loadFile();
@@ -58,42 +71,78 @@ public class ModelFacade implements IModel {
 		}
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#getLifes()
+	 */
 	public int getLifes()
 	{
 		return HUD.getLifes();
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#getScore()
+	 */
 	public int getScore()
 	{
 		return HUD.getScore();
 	}
 	
+	/*
+	 * The getter of the motionLess array
+	 * @return motionLess[][]
+	 */
 	public MotionLess[][] getMotionLess()
 	{
 		return MotionLessFactory.getMotionLess();
 	}
 	
+	/*
+	 * The getter of the motion array
+	 * @return motion[]
+	 */
 	public Motion[] getMotion()
 	{
 		return MotionFactory.getMotion();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#getMapY()
+	 */
 	public int getMapY() {
 		return mapY;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#setMapY(int)
+	 */
 	public void setMapY(int mapY) {
 		this.mapY = mapY;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#getMapX()
+	 */
 	public int getMapX() {
 		return mapX;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#setMapX(int)
+	 */
 	public void setMapX(int mapX) {
 		this.mapX = mapX;
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#moveMobile()
+	 */
 	public void moveMobile()
 	{
 		for (int i = 1; i < 6; i++)
@@ -105,21 +154,37 @@ public class ModelFacade implements IModel {
 		}
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#moveLorann(java.lang.String)
+	 */
 	public void moveLorann(String dir)
 	{
 		this.getMotion()[0].move(this.getMotion(), this.getMotionLess(), dir);
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#isGameRunning()
+	 */
 	public boolean isGameRunning()
 	{
 		return HUD.isGameRunning();
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#isLorannAlive()
+	 */
 	public boolean isLorannAlive()
 	{
 		return this.getMotion()[0].isAlive();
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#convertMotionLessMap()
+	 */
 	public String[][] convertMotionLessMap(){
 			String [][] motionLessMap = new String[this.getMapY()][this.getMapX()];
 			
@@ -134,6 +199,10 @@ public class ModelFacade implements IModel {
 		return motionLessMap;
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#convertMotionMapImages()
+	 */
 	public String[] convertMotionMapImages()
 	{
 		String[] motionMapImages = new String[6];
@@ -144,6 +213,10 @@ public class ModelFacade implements IModel {
 	return motionMapImages;
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#convertMotionMapDimension()
+	 */
 	public int[][] convertMotionMapDimension()
 	{
 		
@@ -167,7 +240,10 @@ public class ModelFacade implements IModel {
 	return motionMapDimension;
 	}
 	
-	
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#respawn()
+	 */
 	public void respawn()
 	{
 		HUD.lessLifes();
@@ -175,6 +251,10 @@ public class ModelFacade implements IModel {
 		HUD.setScore(0);
 	}
 	
+	/*
+	 * non-Javadoc)
+	 * @see model.IModel#lorannAction(boolean)
+	 */
 	public void lorannAction(boolean bool)
 	{
 		if (bool == false)
@@ -194,6 +274,10 @@ public class ModelFacade implements IModel {
 		}
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see model.IModel#getLorannAction()
+	 */
 	public boolean getLorannAction()
 	{
 		return this.getMotion()[5].isAlive();

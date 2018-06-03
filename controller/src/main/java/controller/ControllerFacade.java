@@ -10,7 +10,7 @@ import view.IView;
 /**
  * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
+ * @author Nathan Beer nathan.beer@viacesi.fr
  * @version 1.0
  */
 public class ControllerFacade implements IController, KeyListener {
@@ -54,6 +54,10 @@ public class ControllerFacade implements IController, KeyListener {
     	runGame();
     }
     
+    /*
+     * Run the loop of the deplacements of the game
+     * No parameters
+     */
     public void runGame() throws Exception
     {
     	while (this.getModel().isGameRunning() == true & this.getModel().getLifes() > 0)
@@ -104,18 +108,30 @@ public class ControllerFacade implements IController, KeyListener {
         return this.model;
     }
 
+    /*
+     * (non-Javadoc)
+     * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
+     */
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyTyped(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyTyped(KeyEvent e) {
 		char direction = e.getKeyChar();

@@ -1,9 +1,9 @@
 package model.dao;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-
 
 import model.Example;
 
@@ -18,114 +18,146 @@ public abstract class MapDAO extends AbstractDAO {
     /*
      * Define id's value to change the Map
      */
-    private static String mapNumber = "1";
+    private static String mapNumber = "5";
     
     /** The sql example by id. */
-    private static String sqlProcedureMotion = "call Motion " + mapNumber;
+    private static String sqlProcedureMotion = "call Motion" + mapNumber;
 
     /** The sql example by name. */
-    private static String sqlProcedureMotionLess = "call MotionLess " + mapNumber;
-
-    /** The id column index. */
-    private static int    idColumnIndex    = 1;
-
-    /** The name column index. */
-    private static int    nameColumnIndex  = 2;
-
+    private static String sqlProcedureMotionLess = "call MotionLess" + mapNumber;
+    
+    /** The sql example by name. */
+    private static String sqlProcedureSprite = "call Sprites";
+    
     /**
-     * Gets the example by id.
-     *
-     * @param id
-     *            the id
-     * @return the example by id
-     * @throws SQLException
-     *             the SQL exception
+     * Get the motion map from the BDD and write into a .txt file
+     * @param mapNumber
+     * @throws Exception
      */
-    public static Example getExampleById(final int id) throws SQLException {
+    public static void getMotionMapTxt() throws Exception {
+    	
+    	int lineCount = 0;
+        
+        FileWriter fstream = new FileWriter("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\motion.txt");
+        BufferedWriter out = new BufferedWriter(fstream);
+
         final CallableStatement callStatement = prepareCall(sqlProcedureMotion);
-        Example example = null;
-        callStatement.setInt(1, id);
         if (callStatement.execute()) {
             final ResultSet result = callStatement.getResultSet();
-            if (result.first()) {
-                example = new Example(result.getInt(idColumnIndex), result.getString(nameColumnIndex));
-            }
-            result.close();
-        }
-        return example;
-    }
+            
+            /**
+             * Place cursor at the last row of result.
+             */
+            result.last();
+            
+            
+            lineCount = result.getRow()*3;
 
+            /**
+             * Write the number of lines as int in txt file.
+             */
+            	for(int i=0; i<1; i++) {
+                    out.write(lineCount + "\n");
+                    System.out.println("Completed writing lines count into text file");
+                    
+            	}
+            	
+            	/**
+            	 * Place cursor before first row.
+            	 */
+            	result.beforeFirst();
+            	
+            	/**
+            	 * Write all element as String in txt file.
+            	 */
+                while (result.next()) {
+                out.write(result.getString("Element") + "\n");
+                out.write(result.getInt("X") + "\n");
+                out.write(result.getInt("Y") + "\n");
+
+                System.out.println("Completed writing String into text file");
+            }
+
+            
+            result.close();
+            out.close();
+        }
+       
+    }
+    
     /**
-     * Gets the example by name.
-     *
-     * @param name
-     *            the name
-     * @return the example by name
-     * @throws SQLException
-     *             the SQL exception
+     * Get the motionLess map from the BDD and write into a .txt file
+     * @param mapNumber
+     * @throws Exception
      */
-    public static Example getExampleByName(final String name) throws SQLException {
+    public static void getMotionLessMapTxt() throws Exception {
+        
+        FileWriter fstream = new FileWriter("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\motionLess.txt");
+        BufferedWriter out = new BufferedWriter(fstream);
+
         final CallableStatement callStatement = prepareCall(sqlProcedureMotionLess);
-        Example example = null;
-
-        callStatement.setString(1, name);
         if (callStatement.execute()) {
             final ResultSet result = callStatement.getResultSet();
-            if (result.first()) {
-                example = new Example(result.getInt(idColumnIndex), result.getString(nameColumnIndex));
-            }
-            result.close();
-        }
-        return example;
-    }
-    /*
+            
 
-    /**
-     * Gets the all examples.
-     *
-     * @return the all examples
-     * @throws SQLException
-     *             the SQL exception
-     *
-    public static List<Example> getAllExamples() throws SQLException {
-        final ArrayList<Example> examples = new ArrayList<Example>();
-        final CallableStatement callStatement = prepareCall(sqlAllExamples);
+            /**
+             * Write the map dimension as int in txt file.
+             */
+            	result.first();
+            	for(int i=0; i<2; i++) {
+                    out.write(result.getInt("Element") + "\n");
+                    
+                    System.out.println("Completed writing Dimension into text file");
+                    result.next();
+            	}
+            	
+            	/**
+            	 * Write all element as String in txt file.
+            	 */
+            	result.previous();
+                while (result.next()) {
+                out.write(result.getString("Element") + "\n");
+
+                    System.out.println("Completed writing String into text file");
+            }
+            
+            result.close();
+            out.close();
+        }
+
+    }
+    
+    public static void getSpriteTxt() throws Exception {
+    	
+    	int lineCount = 0;
+        
+        FileWriter fstream = new FileWriter("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\listSprites.txt");
+        BufferedWriter out = new BufferedWriter(fstream);
+
+        final CallableStatement callStatement = prepareCall(sqlProcedureSprite);
         if (callStatement.execute()) {
             final ResultSet result = callStatement.getResultSet();
+            	
+            	/**
+            	 * Write all element as String in txt file.
+            	 */
+                while (result.next()) {
+                out.write(result.getString("Sprite") + "\n");
 
-            for (boolean isResultLeft = result.first(); isResultLeft; isResultLeft = result.next()) {
-                examples.add(new Example(result.getInt(idColumnIndex), result.getString(nameColumnIndex)));
+                System.out.println("Completed writing String into text file");
             }
+
+            
             result.close();
+            out.close();
         }
-        return examples;
-    }
-    */
-    
-    
-    public static ResultSet getProcedureMotion(String id) {
-		return null;
-    	
+       
     }
     
-    public static ResultSet getProcedureMotionLess(String id) {
-  		return null;
-      	
-      }
-    
-    
-    public static void CreateMap() {
-    	
+    public static void CreateMap() throws Exception {
+    	MapDAO.getSpriteTxt();
+    	MapDAO.getMotionLessMapTxt();
+    	MapDAO.getMotionMapTxt();
     }
-    
-    public static void CreateMapMotionLess() {
-    	
-    }
-    
-    public static void CreateMapMotion() {
-    	
-    }
-    
-    
     
 }

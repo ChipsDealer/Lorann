@@ -8,7 +8,7 @@ import model.mobile.Motion;
 public class KindDoor extends MotionLess{
 	
 	/** The Constant SPRITE. */
-    private static final Sprite SPRITE = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\gate_open.png", 'O');
+    private static final Sprite SPRITE = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\gate_open.png", 'O');
 
     
     /**

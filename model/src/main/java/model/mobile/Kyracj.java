@@ -13,7 +13,7 @@ import model.motionLess.MotionLess;
 public class Kyracj extends Motion {
 	
 	//** Constant SPRITE **/
-	private static final Sprite SPRITEMONSTER1 = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\monster_1.png", 'D');
+	private static final Sprite SPRITEMONSTER1 = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\monster_1.png", 'D');
 	
 	public Kyracj(int x,int y) {
 		super(x, y, SPRITEMONSTER1, Property.DEMONS);

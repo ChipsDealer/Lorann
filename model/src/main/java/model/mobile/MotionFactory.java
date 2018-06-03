@@ -17,7 +17,7 @@ import java.io.InputStreamReader;
 public abstract class MotionFactory {
 	
 	/** The Constant fileMotion. */
-    protected static String fileMotion = "D:\\Téléchargements\\Motion.txt"; //<-- modif
+    protected static String fileMotion = "C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\motion.txt"; //<-- modif
     private static final Lorann LORANN = new Lorann(0,0);
     private static final Arrbarr ARRBARR = new Arrbarr(0,0);
     private static final Kyracj KYRACJ = new Kyracj(0,0);

@@ -21,7 +21,7 @@ final class LorannBDDConnector {
     private static String                  user     = "java";
 
     /** The password. */
-    private static String                  password = "";
+    private static String                  password = "Javaproject123@";
 
     /** The url. */
     private static String                  url      = "jdbc:mysql://pma.vandeiheim.ovh/java_project?useSSL=false&serverTimezone=UTC&noAccessToProcedureBodies=true";

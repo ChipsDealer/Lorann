@@ -131,11 +131,11 @@ public class ViewFacade implements IView {
 	{
 		if (bool == true)
 		{
-			this.displayMessage("You win !");
+			this.displayMessage("You won !");
 		}
 		else
 		{
-			this.displayMessage("You lose !");
+			this.displayMessage("You lost !");
 		}
 	}
 	
@@ -146,6 +146,7 @@ public class ViewFacade implements IView {
 	public void closeGame()
 	{
 		this.getWindow().setVisible(false);
+		Thread.currentThread().interrupt();
 	}
 
 }

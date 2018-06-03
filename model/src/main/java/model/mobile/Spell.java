@@ -15,7 +15,7 @@ import model.motionLess.MotionLess;
 
 public class Spell extends Motion {
 	
-	private static final Sprite SPRITESPELL1 = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\fireball_1.png", 'O'); // Change sprite
+	private static final Sprite SPRITESPELL1 = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\fireball_1.png", 'O'); // Change sprite
 	
 	public Spell(int x,int y) {
 		super(x, y,SPRITESPELL1, Property.SPELL);
@@ -96,7 +96,7 @@ public class Spell extends Motion {
 				super.moveDown();
 				super.moveDown();
 			}
-			this.setSprite(new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\fireball_" + setRandomSprite() + ".png", 'O'));
+			this.setSprite(new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\fireball_" + setRandomSprite() + ".png", 'O'));
 		}
 		
 		else if (this.getLast_statement() == Last_statement.DOWN) 
@@ -107,7 +107,7 @@ public class Spell extends Motion {
 				super.moveUp();
 				super.moveUp();
 			}
-			this.setSprite(new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\fireball_" + setRandomSprite() + ".png", 'O'));
+			this.setSprite(new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\fireball_" + setRandomSprite() + ".png", 'O'));
 		}
 
 		else if (this.getLast_statement() == Last_statement.RIGHT) 
@@ -118,7 +118,7 @@ public class Spell extends Motion {
 				super.moveLeft();
 				super.moveLeft();
 			}
-			this.setSprite(new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\fireball_" + setRandomSprite() + ".png", 'O'));
+			this.setSprite(new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\fireball_" + setRandomSprite() + ".png", 'O'));
 		}
 		
 		else if (this.getLast_statement() == Last_statement.LEFT ) 
@@ -129,7 +129,7 @@ public class Spell extends Motion {
 				super.moveRight();
 				super.moveRight();
 			}
-			this.setSprite(new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\fireball_" + setRandomSprite() + ".png", 'O'));
+			this.setSprite(new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\fireball_" + setRandomSprite() + ".png", 'O'));
 		}
 		
 	}

@@ -14,7 +14,7 @@ import model.motionLess.MotionLess;
 public class Maarcg extends Motion {
 	
 	//** Constant SPRITE **/
-	private static final Sprite SPRITEMONSTER4 = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\monster_4.png", 'N');
+	private static final Sprite SPRITEMONSTER4 = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\monster_4.png", 'N');
 	
 	public Maarcg(int x,int y) {
 		super(x, y,SPRITEMONSTER4, Property.DEMONS);

@@ -1,5 +1,6 @@
 package model;
 
+import java.io.FileNotFoundException;
 import java.sql.ResultSet;
 
 
@@ -11,11 +12,11 @@ import java.sql.ResultSet;
  */
 public interface IModel {
 
-	public ResultSet getProcedureMotion(final String id);
+	public void getProcedureMotion() throws Exception;
 	
-	public ResultSet getProcedureMotionLess(final String id);
+	public void getProcedureMotionLess() throws Exception;
 	
-	public void createMap();
+	public void createMap() throws Exception;
 	
 	public void loadMap();
 	

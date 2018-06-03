@@ -44,7 +44,7 @@ public abstract class MotionLessFactory {
      * The motionless elements is an array of all possible MotionlessElement.
      */
 	private static MotionLess[][] motionLess;
-	private static String fileMotionLess = "D:\\Téléchargements\\MotionLess.txt";
+	private static String fileMotionLess = "C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\motionLess.txt";
     
 	/**
      * Gets the good MotionLess from file symbol.

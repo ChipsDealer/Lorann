@@ -1,6 +1,7 @@
 package model;
 
 import java.awt.Point;
+import java.io.FileNotFoundException;
 import java.sql.ResultSet;
 import model.dao.MapDAO;
 import model.mobile.Last_statement;
@@ -34,24 +35,27 @@ public class ModelFacade implements IModel {
 	 * (non-Javadoc)
 	 * @see model.IModel#getProcedureMotion(java.lang.String)
 	 */
-	public ResultSet getProcedureMotion(final String id){
-		return MapDAO.getProcedureMotion(id);
+	public void getProcedureMotion() throws Exception{
+		MapDAO.getMotionMapTxt();
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * @see model.IModel#getProcedureMotionLess(java.lang.String)
 	 */
-	public ResultSet getProcedureMotionLess(final String id){
-		return MapDAO.getProcedureMotionLess(id);
+	public void getProcedureMotionLess() throws Exception{
+		MapDAO.getMotionLessMapTxt();
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * @see model.IModel#createMap()
 	 */
-	public void createMap() {
+	public void createMap() throws Exception {
 		
+		MapDAO.CreateMap();
+		downLoadImage imgs = new downLoadImage();
+		imgs.downloadSprites("");
 	}
 	
 	/*

@@ -14,7 +14,7 @@ import model.motionLess.MotionLess;
 public class Cargyv extends Motion {
 
 	//* All the Constant**/
-	private static final Sprite SPRITEMONSTER2 = new Sprite("D:\\Documents\\Exia\\Projets\\Projet 5 - Java\\Ressources fournis\\sprite\\monster_2.png", 'E');
+	private static final Sprite SPRITEMONSTER2 = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\monster_2.png", 'E');
 	
 	public Cargyv(int x,int y) {
 		super(x , y,SPRITEMONSTER2 , Property.DEMONS);

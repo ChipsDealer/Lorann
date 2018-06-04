@@ -95,6 +95,10 @@ public class Spell extends Motion {
 			{
 				super.moveDown();
 				super.moveDown();
+				if(collision(motion, motionLess) == true)
+				{
+					super.moveUp();
+				}
 			}
 			this.setSprite(new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\fireball_" + setRandomSprite() + ".png", 'O'));
 		}
@@ -106,6 +110,10 @@ public class Spell extends Motion {
 			{
 				super.moveUp();
 				super.moveUp();
+				if(collision(motion, motionLess) == true)
+				{
+					super.moveDown();
+				}
 			}
 			this.setSprite(new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\fireball_" + setRandomSprite() + ".png", 'O'));
 		}
@@ -117,6 +125,10 @@ public class Spell extends Motion {
 			{
 				super.moveLeft();
 				super.moveLeft();
+				if(collision(motion, motionLess) == true)
+				{
+					super.moveRight();
+				}
 			}
 			this.setSprite(new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\fireball_" + setRandomSprite() + ".png", 'O'));
 		}
@@ -128,6 +140,10 @@ public class Spell extends Motion {
 			{
 				super.moveRight();
 				super.moveRight();
+				if(collision(motion, motionLess) == true)
+				{
+					super.moveLeft();
+				}
 			}
 			this.setSprite(new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\fireball_" + setRandomSprite() + ".png", 'O'));
 		}

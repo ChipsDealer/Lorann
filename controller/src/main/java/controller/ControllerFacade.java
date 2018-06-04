@@ -64,7 +64,7 @@ public class ControllerFacade implements IController, KeyListener {
     	{
     		this.isLorannActionAlive = this.getModel().getLorannAction();
     		this.lorannDir = "nop";
-    		Thread.sleep(500);
+    		Thread.sleep(200);
     		if (this.getModel().isLorannAlive() == true)
     		{
     			this.getModel().lorannAction(this.isLorannActionAlive);

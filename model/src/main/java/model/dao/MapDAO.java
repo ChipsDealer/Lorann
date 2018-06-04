@@ -1,6 +1,7 @@
 package model.dao;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
@@ -155,6 +156,8 @@ public abstract class MapDAO extends AbstractDAO {
     }
     
     public static void CreateMap() throws Exception {
+    	File dir = new File("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\");
+    	dir.mkdir();
     	MapDAO.getSpriteTxt();
     	MapDAO.getMotionLessMapTxt();
     	MapDAO.getMotionMapTxt();

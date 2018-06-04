@@ -21,7 +21,7 @@ public abstract class MapDAO extends AbstractDAO {
     /**
      * Define id's value to change the Map
      */
-    private static String mapNumber = "1";
+    private static String mapNumber = "4";
     
     /** The sql for motion. */
     private static String sqlProcedureMotion = "call Motion" + mapNumber;

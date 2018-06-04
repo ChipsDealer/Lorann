@@ -64,6 +64,7 @@ public class Arrbarr extends Motion {
 		}
 		if (this.getX() == motion[0].getX() & this.getY() == motion[0].getY())
 		{
+			motion[5].die();
 			motion[0].die();
 			bool = false;
 		}

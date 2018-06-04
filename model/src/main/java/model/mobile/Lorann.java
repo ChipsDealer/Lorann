@@ -73,21 +73,25 @@ public class Lorann extends Motion{
 		
 		if (this.getX() == motion[1].getX() & this.getY() == motion[1].getY())
 		{
+			motion[5].die();
 			this.die();
 			bool = false;
 		}
 		else if (this.getX() == motion[2].getX() & this.getY() == motion[2].getY())
 		{
+			motion[5].die();
 			this.die();
 			bool = false;
 		}
 		else if (this.getX() == motion[3].getX() & this.getY() == motion[3].getY())
 		{
+			motion[5].die();
 			this.die();
 			bool = false;
 		}
 		else if (this.getX() == motion[4].getX() & this.getY() == motion[4].getY())
 		{
+			motion[5].die();
 			this.die();
 			bool = false;
 		}

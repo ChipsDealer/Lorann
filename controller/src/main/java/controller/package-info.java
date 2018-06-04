@@ -1,5 +1,5 @@
 /**
- * Provides all classes for the controller component.
+ * Provides all contracts for the controller component.
  *
  * @author Nathan Beer nathan.beer@viacesi.fr
  * @version 1.0

@@ -22,8 +22,10 @@ public class ControllerFacade implements IController, KeyListener {
     /** The model. */
     private final IModel model;
     
+    /** The direction of lorann */
     private String lorannDir;
     
+    /** The status of Lorann */
     private boolean isLorannActionAlive;
 
     /**
@@ -58,6 +60,7 @@ public class ControllerFacade implements IController, KeyListener {
     /**
      * Run the loop of the deplacements of the game
      * No parameters
+     * 
      * @throws Exception
      * 					the exception
      */
@@ -114,7 +117,7 @@ public class ControllerFacade implements IController, KeyListener {
         return this.model;
     }
 
-    /*
+    /**
      * (non-Javadoc)
      * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
      */
@@ -124,7 +127,7 @@ public class ControllerFacade implements IController, KeyListener {
 		
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
 	 */
@@ -134,7 +137,7 @@ public class ControllerFacade implements IController, KeyListener {
 		
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see java.awt.event.KeyListener#keyTyped(java.awt.event.KeyEvent)
 	 * @

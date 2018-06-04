@@ -10,6 +10,8 @@ package controller;
 public interface IController {
 	
 	/**
+	 * It used to run the game
+	 * 
 	 * @throws Exception
 	 */
 	public void runGame() throws Exception;

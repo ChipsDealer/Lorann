@@ -49,13 +49,20 @@ public class Panel extends JPanel{
 	/**
 	 * Constructor of the panel
 	 * 
-	 * @param motionMapDimension Image path for the motion elements
-	 * @param motionMapImages Position of the motion elements in 2 dimensions
-	 * @param motionlessMap Image path for the motionless elements
-	 * @param score score's player
-	 * @param life life's player
-	 * @param width Dimension of the Panel
-	 * @param length Dimension of the Panel
+	 * @param motionMapDimension 
+	 * 			Image path for the motion elements
+	 * @param motionMapImages 
+	 * 			Position of the motion elements in 2 dimensions
+	 * @param motionlessMap 
+	 * 			Image path for the motionless elements
+	 * @param score 
+	 * 			score's player
+	 * @param life 
+	 * 			life's player
+	 * @param width 
+	 * 			Dimension of the Panel
+	 * @param length 
+	 * 			Dimension of the Panel
 	 */
 	public Panel(int[][] motionMapDimension,String[] motionMapImages, String[][] motionlessMap, int score, int life, int width, int length)
 	{
@@ -112,7 +119,8 @@ public class Panel extends JPanel{
 	
 	/**
 	 * Getters and setters
-	 * @param motionMap Image path for the motion elements
+	 * @param motionMap 
+	 * 			Image path for the motion elements
 	 */
 	public void setmotionMapDimension(int[][] motionMap) {
 		this.motionMapDimension = motionMap;
@@ -128,7 +136,8 @@ public class Panel extends JPanel{
 	
 	/**
 	 * Getters and setters
-	 * @param motionlessMap image path for the motionless elements
+	 * @param motionlessMap 
+	 * 			Image path for the motionless elements
 	 */
 	public void setMotionlessMap(String[][] motionlessMap) {
 		this.motionlessMap = motionlessMap;
@@ -144,7 +153,8 @@ public class Panel extends JPanel{
 	
 	/**
 	 * Getters and setters
-	 * @param motionMapImages position of the motion elements in 2 dimensions
+	 * @param motionMapImages 
+	 * 			position of the motion elements in 2 dimensions
 	 */
 	public void setMotionMapImages(String[] motionMapImages) {
 		this.motionMapImages = motionMapImages;

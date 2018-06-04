@@ -39,13 +39,20 @@ public class Window extends JFrame{
 	/**
 	 * Constructor of the window
 	 * 
-	 * @param width Dimension of the window
-	 * @param length Dimension of the window
-	 * @param motionMapDimension position of the motion elements in 2 dimensions
-	 * @param motionMapImages image path for the motion elements
-	 * @param motionlessMap	image path for the motion elements 
-	 * @param score score's player
-	 * @param life life's player
+	 * @param width 
+	 * 			Dimension of the window
+	 * @param length 
+	 * 			Dimension of the window
+	 * @param motionMapDimension 
+	 * 			position of the motion elements in 2 dimensions
+	 * @param motionMapImages 
+	 * 			image path for the motion elements
+	 * @param motionlessMap	
+	 * 			image path for the motion elements 
+	 * @param score 
+	 * 			score's player
+	 * @param life 
+	 * 			life's player
 	 */
 	public Window(int width, int length, int[][] motionMapDimension,String[] motionMapImages, String[][] motionlessMap, int score, int life)
 	{
@@ -98,7 +105,8 @@ public class Window extends JFrame{
 
 	/**
 	 * Getters and setters
-	 * @param length of the window
+	 * @param length 
+	 * 			lenghth of the window
 	 */
 	public void setLengthMap(int length) {
 		this.lengthMap = length;
@@ -114,7 +122,8 @@ public class Window extends JFrame{
 
 	/**
 	 * Getters and setters
-	 * @param the panel
+	 * @param panel
+	 * 			the panel
 	 */
 	public void setPanel(Panel panel) {
 		this.panel = panel;

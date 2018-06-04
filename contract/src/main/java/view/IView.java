@@ -12,7 +12,7 @@ import java.awt.event.KeyListener;
 public interface IView {
 
     /**
-     * Display message.
+     * Display a message.
      *
      * @param message
      *            the message
@@ -20,6 +20,7 @@ public interface IView {
     void displayMessage(String message);
     
     /**
+     * It used to create the display
      * 
      * @param motionMapDimension
      * @param motionMapImages
@@ -32,6 +33,7 @@ public interface IView {
     public void createDisplay(int[][] motionMapDimension,String[] motionMapImages, String[][] motionlessMap, int score, int life, int width, int length);
     
     /**
+     * It used to show the display
      * 
      * @param motionMapDimension
      * @param motionMapImages
@@ -42,17 +44,23 @@ public interface IView {
     public void showDisplay(int[][] motionMapDimension,String[] motionMapImages, String[][] motionlessMap, int score, int life);
     
     /**
+     * It used to add a keylistenet to the window
      * 
      * @param listener
      */
     public void addListener(KeyListener listener);
     
     /**
+     * It used to show the endgame message
      * 
      * @param bool
      */
     public void endGame(boolean bool);
     
+    /**
+     * It used to exit the game
+     * 
+     */
 	public void closeGame();
 
     

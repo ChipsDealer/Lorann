@@ -21,20 +21,22 @@ public abstract class MapDAO extends AbstractDAO {
     /**
      * Define id's value to change the Map
      */
-    private static String mapNumber = "4";
+    private static String mapNumber;
     
     /** The sql for motion. */
-    private static String sqlProcedureMotion = "call Motion" + mapNumber;
+    private static String sqlProcedureMotion = "call Motion" + MapDAO.mapNumber;
 
     /** The sql for motionless. */
-    private static String sqlProcedureMotionLess = "call MotionLess" + mapNumber;
+    private static String sqlProcedureMotionLess = "call MotionLess" + MapDAO.mapNumber;
     
     /** The sql for sprites. */
     private static String sqlProcedureSprite = "call Sprites";
     
+    /** The sql for the mapNumber. */
+    private static String sqlProcedureMapNumber = "call MapNumber";
+    
     /**
      * Get the motion map from the BDD and write into a .txt file
-     * @param mapNumber
      * @throws Exception
      */
     public static void getMotionMapTxt() throws Exception {
@@ -84,13 +86,13 @@ public abstract class MapDAO extends AbstractDAO {
             
             result.close();
             out.close();
+            callStatement.close();
         }
        
     }
     
     /**
      * Get the motionLess map from the BDD and write into a .txt file
-     * @param mapNumber
      * @throws Exception
      */
     public static void getMotionLessMapTxt() throws Exception {
@@ -126,13 +128,13 @@ public abstract class MapDAO extends AbstractDAO {
             
             result.close();
             out.close();
+            callStatement.close();
         }
 
     }
     
     /**
      * Get the sprites from the BDD and write into a .txt file
-     * @param mapNumber
      * @throws Exception
      */
     public static void getSpriteTxt() throws Exception {
@@ -156,15 +158,40 @@ public abstract class MapDAO extends AbstractDAO {
             
             result.close();
             out.close();
+            callStatement.close();
         }
        
     }
     
+    
     /**
-     * Thgis method allows to create the map.
+     * Get the mapNumber from the BDD
+     * @throws Exception
+     */
+    public static int getMapNumber() throws Exception {
+    	        
+        final CallableStatement callStatement = prepareCall(sqlProcedureMapNumber);
+        if (callStatement.execute()) {
+            final ResultSet result = callStatement.getResultSet();
+            result.first();
+            int mapnumber = result.getInt("id");
+            result.close();
+            callStatement.close();
+            return mapnumber;
+        }
+        return 1;
+       
+    }
+    
+    
+    /**
+     * This method allows to create the map.
      * @throws Exception
      */
     public static void CreateMap() throws Exception {
+    	MapDAO.mapNumber = "" + MapDAO.getMapNumber();
+    	MapDAO.sqlProcedureMotion = "call Motion" + MapDAO.mapNumber;
+    	MapDAO.sqlProcedureMotionLess = "call MotionLess" + MapDAO.mapNumber;
     	File dir = new File("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\");
     	dir.mkdir();
     	MapDAO.getSpriteTxt();

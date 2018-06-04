@@ -8,26 +8,49 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * 
+ * @author Nathan Beer nathan.beer@viacesi.fr
+ * @version 1.0
+ * @since jre1.8.0_131
+ */
 public class ExampleTest {
     private Example example;
 
+    /**
+     * 
+     * @throws Exception
+     */
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
     }
 
+    /**
+     * 
+     * @throws Exception
+     */
     @AfterClass
     public static void tearDownAfterClass() throws Exception {
     }
 
+    /**
+     * 
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {
         this.example = new Example(1, "Example test");
     }
 
+    /**
+     * 
+     * @throws Exception
+     */
     @After
     public void tearDown() throws Exception {
     }
 
+    
     @Test
     public void testGetId() {
         final int expected = 1;

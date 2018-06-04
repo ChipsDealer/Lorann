@@ -5,6 +5,12 @@ import model.Property;
 import model.Sprite;
 import model.mobile.Motion;
 
+/**
+ * @author Léo thommes leo.thommes@viacesi.fr
+ * @version 1.0
+ * @since jre1.8.0_131
+ */
+
 public abstract class MotionLess extends Element{
 	
 	/**
@@ -23,7 +29,7 @@ public abstract class MotionLess extends Element{
 		super(sprite, property);
 	}
 	
-	/*
+	/**
 	 * The action of the MotionLess element
 	 * @param motion, motionLess
 	 */

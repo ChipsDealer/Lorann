@@ -11,7 +11,9 @@ import java.sql.Statement;
  *
  * @author Léo Thommes leo.thommes@viacesi.fr
  * @version 1.0
+ * @since jre1.8.0_131
  */
+
 final class LorannBDDConnector {
 
     /** The constant instance of LorannBDDConnector (singleton). */
@@ -34,6 +36,7 @@ final class LorannBDDConnector {
 
     /**
      * Instantiates a new Lorann BDD connector.
+     * Constructor.
      */
     public LorannBDDConnector() {
         this.open();

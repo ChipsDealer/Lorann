@@ -3,8 +3,9 @@ package model;
 /**
  * <h1>The Class Example.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
+ * @author Nathan Beer nathan.beer@viacesi.fr
  * @version 1.0
+ * @since jre1.8.0_131
  */
 public class Example {
 

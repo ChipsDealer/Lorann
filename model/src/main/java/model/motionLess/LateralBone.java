@@ -3,6 +3,15 @@ package model.motionLess;
 import model.Property;
 import model.Sprite;
 
+
+/**
+ * <h1>The Class LateralBone is a static element on the map.</h1>
+ *
+ * @author Léo thommes leo.thommes@viacesi.fr
+ * @version 1.0
+ * @since jre1.8.0_131
+ */
+
 public class LateralBone extends MotionLess{
 	
 	/** The Constant SPRITE. */
@@ -10,6 +19,7 @@ public class LateralBone extends MotionLess{
 
     
     /**
+     * The constructor.
      * Instanciate a new LateralBone
      */
 	LateralBone() {

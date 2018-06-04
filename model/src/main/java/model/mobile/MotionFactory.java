@@ -9,15 +9,19 @@ import java.io.InputStreamReader;
 
 
 /**
- * <h1>The Class mobileFactory instantiate every motion element </h1>
+ * <h1>The Class MotionFactory allows to create elements from txt maps.</h1>
  *
- * @author Frost
+ * @author Pierre Baudot pierre.baudot@viacesi.fr
  * @version 1.0
+ * @since jre1.8.0_131
  */
+
 public abstract class MotionFactory {
 	
-	/** The Constant fileMotion. */
-    protected static String fileMotion = "C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\motion.txt"; //<-- modif
+	/**
+	 * All the constants sprite for motion elements.
+	 */
+	protected static String fileMotion = "C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\motion.txt"; //<-- modif
     private static final Lorann LORANN = new Lorann(0,0);
     private static final Arrbarr ARRBARR = new Arrbarr(0,0);
     private static final Kyracj KYRACJ = new Kyracj(0,0);
@@ -26,8 +30,10 @@ public abstract class MotionFactory {
     private static final Spell SPELL = new Spell(0,0);
     
 	
-	/** All the Constant. */
 
+    /**
+     * The static table motion.
+     */
     private static Motion[] motion = {
 			LORANN,
 			KYRACJ,
@@ -37,7 +43,10 @@ public abstract class MotionFactory {
 			SPELL
 	};
 
-    
+    /**
+     * This method allows to read and analyse txt file where motion elments are stored.
+     * @throws Exception
+     */
 	public static void loadFile() throws Exception
 	{
 		
@@ -81,12 +90,17 @@ public abstract class MotionFactory {
         buff.close();
 	}
 	
-	
+	/**
+	 * @return the motion.
+	 */
 	public static Motion[] getMotion() {
 		return motion;
 	}
 
 
+	/**
+	 * @param the motion.
+	 */
 	public static void setMotion(Motion[] motion) {
 		MotionFactory.motion = motion;
 	}

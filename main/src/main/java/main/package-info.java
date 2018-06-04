@@ -1,7 +1,8 @@
 /**
  * Provides all classes for the main component.
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
+ * @author Nathan Beer nathan.beer@viacesi.fr
+ * @since jre1.8.0_131
  * @version 1.0
  */
 package main;

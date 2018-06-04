@@ -8,6 +8,7 @@ import java.sql.ResultSet;
  * 
  * @author Léo Thommes leo.thommes@viacesi.fr
  * @version 1.0
+ * @since jre1.8.0_131
  */
 public abstract class AbstractDAO {
 

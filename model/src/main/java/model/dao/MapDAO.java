@@ -13,21 +13,23 @@ import model.Example;
  *
  * @author Léo Thommes leo.thommes@viacesi.fr
  * @version 1.0
+ * @since jre1.8.0_131
  */
+
 public abstract class MapDAO extends AbstractDAO {
 	
-    /*
+    /**
      * Define id's value to change the Map
      */
     private static String mapNumber = "1";
     
-    /** The sql example by id. */
+    /** The sql for motion. */
     private static String sqlProcedureMotion = "call Motion" + mapNumber;
 
-    /** The sql example by name. */
+    /** The sql for motionless. */
     private static String sqlProcedureMotionLess = "call MotionLess" + mapNumber;
     
-    /** The sql example by name. */
+    /** The sql for sprites. */
     private static String sqlProcedureSprite = "call Sprites";
     
     /**
@@ -128,10 +130,13 @@ public abstract class MapDAO extends AbstractDAO {
 
     }
     
+    /**
+     * Get the sprites from the BDD and write into a .txt file
+     * @param mapNumber
+     * @throws Exception
+     */
     public static void getSpriteTxt() throws Exception {
-    	
-    	int lineCount = 0;
-        
+    	        
         FileWriter fstream = new FileWriter("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\listSprites.txt");
         BufferedWriter out = new BufferedWriter(fstream);
 
@@ -155,6 +160,10 @@ public abstract class MapDAO extends AbstractDAO {
        
     }
     
+    /**
+     * Thgis method allows to create the map.
+     * @throws Exception
+     */
     public static void CreateMap() throws Exception {
     	File dir = new File("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\");
     	dir.mkdir();

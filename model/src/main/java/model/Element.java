@@ -1,6 +1,14 @@
 package model;
 
 
+/**
+ * <h1>The Class is the main class for all elements.</h1>
+ *
+ * @author Léo thommes leo.thommes@viacesi.fr
+ * @version 1.0
+ * @since jre1.8.0_131
+ */
+
 public abstract class Element {
 	
 	/** The sprite. */
@@ -22,7 +30,7 @@ public abstract class Element {
 		this.setProperty(property);
 	}
 	
-	/*
+	/**
 	 * Getter of the sprite
 	 * @return Sprite
 	 */
@@ -30,7 +38,7 @@ public abstract class Element {
 		return this.sprite;
 	}
 
-	/*
+	/**
 	 * Getter of the property
 	 * @return Property
 	 */
@@ -38,7 +46,7 @@ public abstract class Element {
 		return this.property;
 	}
 
-	/*
+	/**
 	 * Setter of the Property
 	 * @param property
 	 */
@@ -46,7 +54,7 @@ public abstract class Element {
 		this.property = property;
 	}
 
-	/*
+	/**
 	 * Setter of the Sprite
 	 * @param sprite
 	 */

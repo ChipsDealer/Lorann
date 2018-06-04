@@ -4,17 +4,23 @@ import model.Property;
 import model.Sprite;
 import model.motionLess.MotionLess;
 /**
- * <h1>The Class Kyracj is a enemies of the player</h1>
+ * <h1>The Class Kyracj is a enemies of the player.</h1>
  *
- * @author Frost
+ * @author Pierre Baudot pierre.baudot@viacesi.fr
  * @version 1.0
+ * @since jre1.8.0_131
  */
 
 public class Kyracj extends Motion {
 	
-	//** Constant SPRITE **/
+	/**
+	 * The Constant Sprite.
+	 */
 	private static final Sprite SPRITEMONSTER1 = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\monster_1.png", 'D');
 	
+	/**
+	 * The Constructor.
+	 */
 	public Kyracj(int x,int y) {
 		super(x, y, SPRITEMONSTER1, Property.DEMONS);
 		this.setAlive(false);
@@ -25,7 +31,11 @@ public class Kyracj extends Motion {
      * @see model.mobile#move(ArrayList<?> map, ArrayList<?> mob)
      */
 	
-	// Pattern for Kyracj
+
+	/**
+	 * This method allows movement pattern for Kyracj.
+	 * @param tables motion and motionless
+	 */
 	public void move(Motion motion[], MotionLess motionLess[][]) {
 			if (this.getLast_statement() == Last_statement.UP || this.getLast_statement() == Last_statement.NOP) {
 				super.moveUp();
@@ -45,11 +55,14 @@ public class Kyracj extends Motion {
 			}
 		}
 	
-	
+	/**
+	 * This method allows collisions.
+	 * @param tables motion and motionless.
+	 * @return boolean
+	 */
 	public boolean collision(Motion motion[], MotionLess motionLess[][]) {
 		boolean bool = false;
 		
-		//Motionless verif
 		switch (motionLess[this.getY()][this.getX()].getProperty())
 		{	
 			case BLOCKING_WITH_ACTION : 
@@ -66,14 +79,15 @@ public class Kyracj extends Motion {
 			
 			case PENETRABLE_WITH_ACTION :
 			{
-				bool = true;	// Treasure or energicbubble
+				bool = true;
 			}
+			break;
+			
 			default:
 			{
 				bool = false ;
 			}
 		}
-		//Motion verif
 		if (this.getX() == motion[0].getX() & this.getY() == motion[0].getY())
 		{
 			motion[0].die();
@@ -82,7 +96,7 @@ public class Kyracj extends Motion {
 		else if (this.getX() == motion[5].getX() & this.getY() == motion[5].getY())
 		{
 			System.out.println(this.getX() + " et " + motion[5].getX());
-			motion[1].die(); //Kyracj die
+			motion[1].die();
 			bool = false;
 		}
 		return bool;		
@@ -96,9 +110,11 @@ public class Kyracj extends Motion {
 		super.die();
 	}
 
+	/**
+	 * @param tables motion and motionless.
+	 */
 	@Override
 	public void move(Motion[] motion, MotionLess[][] motionLess, String dir) {
-		// TODO Auto-generated method stub
 		
 	}
 

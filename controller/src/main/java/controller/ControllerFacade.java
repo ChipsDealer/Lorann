@@ -12,6 +12,7 @@ import view.IView;
  *
  * @author Nathan Beer nathan.beer@viacesi.fr
  * @version 1.0
+ * @since jre1.8.0_131
  */
 public class ControllerFacade implements IController, KeyListener {
 
@@ -54,12 +55,17 @@ public class ControllerFacade implements IController, KeyListener {
     	runGame();
     }
     
-    /*
+    /**
      * Run the loop of the deplacements of the game
      * No parameters
+     * @throws Exception
+     * 					the exception
      */
     public void runGame() throws Exception
     {
+    	/**
+    	 * While player is alive
+    	 */
     	while (this.getModel().isGameRunning() == true & this.getModel().getLifes() > 0)
     	{
     		this.isLorannActionAlive = this.getModel().getLorannAction();
@@ -131,6 +137,7 @@ public class ControllerFacade implements IController, KeyListener {
 	/*
 	 * (non-Javadoc)
 	 * @see java.awt.event.KeyListener#keyTyped(java.awt.event.KeyEvent)
+	 * @
 	 */
 	@Override
 	public void keyTyped(KeyEvent e) {

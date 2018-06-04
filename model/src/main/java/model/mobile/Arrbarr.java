@@ -4,26 +4,39 @@ import model.Property;
 import model.Sprite;
 import model.motionLess.MotionLess;
 /**
- * <h1>The Class Arrbarr is a enemies of the player</h1>
+ * <h1>The Class Arrbarr is a enemies of the player.</h1>
  *
- * @author Frost
+ * @author Pierre Baudot pierre.baudot@viacesi.fr
  * @version 1.0
+ * @since jre1.8.0_131
  */
 
 public class Arrbarr extends Motion {
 
-	//* All the Constant**/
+
+	/**
+	 * The Constant sprite.
+	 */
 	private static final Sprite SPRITEMONSTER3 = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\monster_3.png", 'M');
 	
+	/**
+	 * The constructor
+	 * @param x, y
+	 */
 	public Arrbarr(int x,int y) {
 		super(x, y, SPRITEMONSTER3, Property.DEMONS);
 		this.setAlive(false);
 	}
 	
+	/**
+	 * This method allows the collision.
+	 * 
+	 * @param table motion and motionless
+	 * @return boolean
+	 */
 	public boolean collision(Motion motion[], MotionLess motionLess[][]) {
 		boolean bool = false;
 		
-		//Motionless verif
 		switch (motionLess[this.getY()][this.getX()].getProperty())
 		{	
 			case BLOCKING_WITH_ACTION : 
@@ -40,7 +53,7 @@ public class Arrbarr extends Motion {
 			
 			case PENETRABLE_WITH_ACTION :
 			{
-				bool = true;	// Treasure or energicbubble
+				bool = true;
 			}
 			break;
 			
@@ -49,7 +62,6 @@ public class Arrbarr extends Motion {
 				bool = false ;
 			}
 		}
-		//Motion verif
 		if (this.getX() == motion[0].getX() & this.getY() == motion[0].getY())
 		{
 			motion[0].die();
@@ -57,7 +69,7 @@ public class Arrbarr extends Motion {
 		}
 		else if (this.getX() == motion[5].getX() & this.getY() == motion[5].getY())
 		{
-			motion[3].die(); //Arrbarr die
+			motion[3].die();
 			bool = false;
 		}
 		return bool;		
@@ -72,6 +84,10 @@ public class Arrbarr extends Motion {
 		super.die();
 	}
 
+	/**
+	 * This method allows the movement.
+	 * @param motion and motionless table
+	 */
 	@Override
 	public void move(Motion motion[], MotionLess motionLess[][]) {
 		if (this.getLast_statement() == Last_statement.UP || this.getLast_statement() == Last_statement.NOP) {
@@ -151,6 +167,10 @@ public class Arrbarr extends Motion {
 		}
 	}
 
+	/**
+	 * This methdo allows the movement.
+	 * @param the tables motion and motionless
+	 */
 	@Override
 	public void move(Motion[] motion, MotionLess[][] motionLess, String dir) {
 		// TODO Auto-generated method stub

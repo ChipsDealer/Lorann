@@ -26,30 +26,34 @@ public class ModelFacade implements IModel {
 	
 	/**
      * Instantiates a new model facade.
+     * The Constructor.
      */
     public ModelFacade() {
     	
     }
     
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#getProcedureMotion(java.lang.String)
+	 * @throws Exception
 	 */
 	public void getProcedureMotion() throws Exception{
 		MapDAO.getMotionMapTxt();
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#getProcedureMotionLess(java.lang.String)
+	 * @Throws Exception
 	 */
 	public void getProcedureMotionLess() throws Exception{
 		MapDAO.getMotionLessMapTxt();
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#createMap()
+	 * @throws Exception
 	 */
 	public void createMap() throws Exception {
 		
@@ -58,7 +62,7 @@ public class ModelFacade implements IModel {
 		imgs.downloadSprites("");
 	}
 	
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#loadMap()
 	 */
@@ -75,25 +79,27 @@ public class ModelFacade implements IModel {
 		}
 	}
 	
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#getLifes()
+	 * @return a int
 	 */
 	public int getLifes()
 	{
 		return HUD.getLifes();
 	}
 	
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#getScore()
+	 * @return a int.
 	 */
 	public int getScore()
 	{
 		return HUD.getScore();
 	}
 	
-	/*
+	/**
 	 * The getter of the motionLess array
 	 * @return motionLess[][]
 	 */
@@ -102,7 +108,7 @@ public class ModelFacade implements IModel {
 		return MotionLessFactory.getMotionLess();
 	}
 	
-	/*
+	/**
 	 * The getter of the motion array
 	 * @return motion[]
 	 */
@@ -111,7 +117,7 @@ public class ModelFacade implements IModel {
 		return MotionFactory.getMotion();
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#getMapY()
 	 */
@@ -119,7 +125,7 @@ public class ModelFacade implements IModel {
 		return mapY;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#setMapY(int)
 	 */
@@ -127,7 +133,7 @@ public class ModelFacade implements IModel {
 		this.mapY = mapY;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#getMapX()
 	 */
@@ -135,7 +141,7 @@ public class ModelFacade implements IModel {
 		return mapX;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#setMapX(int)
 	 */
@@ -143,7 +149,7 @@ public class ModelFacade implements IModel {
 		this.mapX = mapX;
 	}
 	
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#moveMobile()
 	 */
@@ -158,7 +164,7 @@ public class ModelFacade implements IModel {
 		}
 	}
 	
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#moveLorann(java.lang.String)
 	 */
@@ -167,7 +173,7 @@ public class ModelFacade implements IModel {
 		this.getMotion()[0].move(this.getMotion(), this.getMotionLess(), dir);
 	}
 	
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#isGameRunning()
 	 */
@@ -176,7 +182,7 @@ public class ModelFacade implements IModel {
 		return HUD.isGameRunning();
 	}
 	
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#isLorannAlive()
 	 */
@@ -185,7 +191,7 @@ public class ModelFacade implements IModel {
 		return this.getMotion()[0].isAlive();
 	}
 	
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#convertMotionLessMap()
 	 */
@@ -203,7 +209,7 @@ public class ModelFacade implements IModel {
 		return motionLessMap;
 	}
 	
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#convertMotionMapImages()
 	 */
@@ -217,7 +223,7 @@ public class ModelFacade implements IModel {
 	return motionMapImages;
 	}
 	
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#convertMotionMapDimension()
 	 */
@@ -244,7 +250,7 @@ public class ModelFacade implements IModel {
 	return motionMapDimension;
 	}
 	
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#respawn()
 	 */
@@ -255,9 +261,10 @@ public class ModelFacade implements IModel {
 		HUD.setScore(0);
 	}
 	
-	/*
+	/**
 	 * non-Javadoc)
 	 * @see model.IModel#lorannAction(boolean)
+	 * @param a boolean
 	 */
 	public void lorannAction(boolean bool)
 	{
@@ -278,7 +285,7 @@ public class ModelFacade implements IModel {
 		}
 	}
 	
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#getLorannAction()
 	 */

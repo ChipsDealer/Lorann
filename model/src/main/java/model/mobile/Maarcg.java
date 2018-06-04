@@ -5,28 +5,40 @@ import model.Property;
 import model.Sprite;
 import model.motionLess.MotionLess;
 /**
- * <h1>The Class Maarcg is a enemies of the player</h1>
+ * <h1>The Class Maarcg is a enemies of the player.</h1>
  *
- * @author Frost
+ * @author Pierre Baudot pierre.baudot@viacesi.fr
  * @version 1.0
+ * @since jre1.8.0_131
  */
 
 public class Maarcg extends Motion {
 	
-	//** Constant SPRITE **/
+	/**
+	 * The constant Sprite.
+	 */
 	private static final Sprite SPRITEMONSTER4 = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\monster_4.png", 'N');
 	
+	/**
+	 * The constructor.
+	 * @param int x, int y
+	 */
 	public Maarcg(int x,int y) {
 		super(x, y,SPRITEMONSTER4, Property.DEMONS);
 		this.setAlive(false);
 	}
 
 	
-	
+	/**
+	 * Thgis class allows to all collisions.
+	 * 
+	 * @param motion
+	 * @param motionLess
+	 * @return a boolean
+	 */
 	public boolean collision(Motion motion[], MotionLess motionLess[][]) {
 		boolean bool = false;
 		
-		//Motionless verif
 		switch (motionLess[this.getY()][this.getX()].getProperty())
 		{	
 			case BLOCKING_WITH_ACTION : 
@@ -43,7 +55,7 @@ public class Maarcg extends Motion {
 			
 			case PENETRABLE_WITH_ACTION :
 			{
-				bool = true;	// Treasure or energicbubble
+				bool = true;
 			}
 			break;
 			
@@ -52,7 +64,6 @@ public class Maarcg extends Motion {
 				bool = false ;
 			}
 		}
-		//Motion verif
 		if (this.getX() == motion[0].getX() & this.getY() == motion[0].getY())
 		{
 			motion[0].die();
@@ -60,7 +71,7 @@ public class Maarcg extends Motion {
 		}
 		else if (this.getX() == motion[5].getX() & this.getY() == motion[5].getY())
 		{
-			motion[4].die(); //Maarcg die
+			motion[4].die();
 			bool = false;
 		}
 		return bool;		
@@ -73,6 +84,10 @@ public class Maarcg extends Motion {
 		super.die();
 	}
 
+	/**
+	 * This method allows for movements.
+	 * @param the tables for motion and motionless elements.
+	 */
 	@Override
 	public void move(Motion motion[], MotionLess motionLess[][]) {
 		Random r = new Random();
@@ -149,10 +164,12 @@ public class Maarcg extends Motion {
 	}
 
 
-
+	/**
+	 * This method allows for movements of motion elements.
+	 * @param the motion and motionless tables.
+	 */
 	@Override
 	public void move(Motion[] motion, MotionLess[][] motionLess, String dir) {
-		// TODO Auto-generated method stub
 		
 	}
 }

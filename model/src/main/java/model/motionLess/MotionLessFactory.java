@@ -6,10 +6,13 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+
 /**
- * <h1>A factory to create MotionlessElements objects.</h1>
- * @author Léo Thommes
- * @version 1.0 
+ * <h1>A factory to create all static elements.</h1>
+ *
+ * @author Léo thommes leo.thommes@viacesi.fr
+ * @version 1.0
+ * @since jre1.8.0_131
  */
 
 public abstract class MotionLessFactory {
@@ -44,6 +47,10 @@ public abstract class MotionLessFactory {
      * The motionless elements is an array of all possible MotionlessElement.
      */
 	private static MotionLess[][] motionLess;
+	
+	/**
+	 * The String for txt file location.
+	 */
 	private static String fileMotionLess = "C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\motionLess.txt";
     
 	/**
@@ -75,7 +82,6 @@ public abstract class MotionLessFactory {
         	{
         		position.y = Integer.parseInt(line);
         	}
-        	//tabMotionLessSettings[i] = line;       	
         }
 		
         MotionLessFactory.motionLess = new MotionLess[position.y][position.x];
@@ -95,7 +101,7 @@ public abstract class MotionLessFactory {
 		        		}
 		        	break;
 		        	
-	        		case 'c':
+	        		case 'C':
 		        		{
 		        			MotionLessFactory.motionLess[i][j] = MotionLessFactory.TREASURE;
 		        		}
@@ -148,7 +154,9 @@ public abstract class MotionLessFactory {
         return position;
     }
 	
-	
+	/**
+	 * Getter and setter for motion less table.
+	 */
     public static MotionLess[][] getMotionLess() {
 		return motionLess;
 	}

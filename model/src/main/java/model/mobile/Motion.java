@@ -4,11 +4,13 @@ import model.*;
 import model.motionLess.MotionLess;
 
 /**
- * <h1>The Class Motion is a generic class for every motion Element</h1>
+ * <h1>The Class Motion allows the movements for all motion elements.</h1>
  *
- * @author Frost
+ * @author Pierre Baudot pierre.baudot@viacesi.fr
  * @version 1.0
+ * @since jre1.8.0_131
  */
+
 public abstract class Motion extends Element {
 	
 	/** position of the motion element in x**/
@@ -20,7 +22,10 @@ public abstract class Motion extends Element {
 	//** Last_movement of the motion element **/
 	private Last_statement last_statement;
 	
-	
+	/**
+	 * The Constructor.
+	 * @param int x, int y, the sprite and the property.
+	 */
 	public Motion(final int x, final int y, final Sprite sprite, final Property property) {
 		super(sprite, property);
 		this.setX(x);
@@ -31,9 +36,8 @@ public abstract class Motion extends Element {
 	
 	}
 	 /**
-     * delete a motion element
+     * Delete a motion element
      * 
-     * @return nothing
      */
 	public void die() {
 		this.alive = false;
@@ -41,34 +45,34 @@ public abstract class Motion extends Element {
 		this.setY(0);
 	}
 	 /**
-     * move the element 
-     *    
-     * @return nothing
-       */
+     * This abstract method allow to move the element.
+     * @param the tables motion and motionless.
+     */
 	public abstract void move(Motion motion[], MotionLess motionLess[][]);
 	
+
 	/**
-     * move the element Lorann
-     *    
-     * @return nothing
-       */
+	 * This method allows to move the motion elements.
+	 * 
+	 * @param motion
+	 * @param motionLess
+	 * @param dir
+	 */
 	public abstract void move(Motion motion[], MotionLess motionLess[][], String dir);
 	
-	 /**
-     * move the element to the Up
-     *
-     *@return nothing
-       */
+
+	/**
+	 * This method allows to move Up.
+	 */
 	public void moveUp() {
 		this.setY(this.getY() -1);
 		this.setLast_statement(Last_statement.UP);
 	}
 	
 	 /**
-     * move the element to the Up and the Right (diagonal)
-     *     
-     * @return nothing
-       */
+     * Move the element to the Up and the Right (diagonal).
+     * 
+     */
 	public void moveUpRight() {
 		this.setY(this.getY() -1);
 		this.setX(this.getX() +1);
@@ -76,71 +80,68 @@ public abstract class Motion extends Element {
 	}
 	
 	 /**
-     * move the element to the Up and the Left
+     * Move the element to the Up and the Left.
      *    
-     * @return nothing
-       */
+     */
 	public void moveUpLeft() {
 		this.setY(this.getY() -1);
 		this.setX(this.getX() -1);
 		this.setLast_statement(Last_statement.UPLEFT);
 	}
 	
-	 /**
-     * move the element the Down
-     *
-     * @return nothing
-       */
+
+	/**
+	 * This method allows to move down.
+	 */
 	public void moveDown() {
 		this.setY(this.getY() +1);
 		this.setLast_statement(Last_statement.DOWN);
 	}
 	
-	 /**
-     * move the element to the Down and the Right
-     *  
-     * @return nothing
-       */
+
+	/**
+	 * This method allows to move down and right.
+	 */
 	public void moveDownRight() {
 		this.setY(this.getY() +1);
 		this.setX(this.getX() +1);
 		this.setLast_statement(Last_statement.DOWNRIGHT);
 	}
-	
-	 /**
-     * move the element to the Down and the Left
-     *  
-     * @return nothing
-       */
+
+	/**
+	 * This method allows to move down and left.
+	 */
 	public void moveDownLeft() {
 		this.setY(this.getY() +1);
 		this.setX(this.getX() -1);
 		this.setLast_statement(Last_statement.DOWNLEFT);
 	}
 	
-	 /**
-     * move the element to Left 
-     *  
-     * @return nothing
-       */
+	/**
+	 * This method allows to move left.
+	 */
 	public void moveLeft() {
 		this.setX(this.getX() -1);
 		this.setLast_statement(Last_statement.LEFT);
 	}
-	 /**
-     * move the element to the right
-     *    
-     * @return nothing
-       */
+
+	/**
+	 * This method allows to move right.
+	 */
 	public void moveRight() {
 		this.setX(this.getX() +1);
 		this.setLast_statement(Last_statement.RIGHT);
 	}
 	
+	/**
+	 * This method do nothing.
+	 */
 	public void doNothing() {
 	}
 	
-	
+	/**
+	 * All getters and setters.
+	 */
 	public int getX() {
 		return x;
 	}

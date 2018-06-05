@@ -14,14 +14,14 @@ import model.motionLess.MotionLess;
 public class Lorann extends Motion{
 		
 	/** All the constant SPRITE **/
-	private static final Sprite SPRITEB = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\lorann_b.png", 'L');
-	private static final Sprite SPRITEBL = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\lorann_bl.png", 'L');
-	private static final Sprite SPRITEBR = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\lorann_br.png", 'L');
-	private static final Sprite SPRITEL = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\lorann_l.png", 'L');
-	private static final Sprite SPRITER = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\lorann_r.png", 'L');
-	private static final Sprite SPRITEU = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\lorann_u.png", 'L');
-	private static final Sprite SPRITEUL = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\lorann_ul.png", 'L');
-	private static final Sprite SPRITEUR = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\lorann_ur.png", 'L');
+	public static final Sprite SPRITEB = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\lorann_b.png", 'L');
+	public static final Sprite SPRITEBL = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\lorann_bl.png", 'L');
+	public static final Sprite SPRITEBR = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\lorann_br.png", 'L');
+	public static final Sprite SPRITEL = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\lorann_l.png", 'L');
+	public static final Sprite SPRITER = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\lorann_r.png", 'L');
+	public static final Sprite SPRITEU = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\lorann_u.png", 'L');
+	public static final Sprite SPRITEUL = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\lorann_ul.png", 'L');
+	public static final Sprite SPRITEUR = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\lorann_ur.png", 'L');
 	
 	/**
 	 * The constructor.

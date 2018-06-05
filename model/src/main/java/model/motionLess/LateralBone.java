@@ -22,7 +22,7 @@ public class LateralBone extends MotionLess{
      * The constructor.
      * Instanciate a new LateralBone
      */
-	LateralBone() {
+	public LateralBone() {
 		super(SPRITE, Property.BLOCKING_WITHOUT_ACTION);
 	}
 

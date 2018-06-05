@@ -190,7 +190,7 @@ public class Spell extends Motion {
 	 * @return int
 	 * 			A random sprite
 	 */
-	private int setRandomSprite()
+	public int setRandomSprite()
 	{
 		Random r = new Random();
 		int minValue = 1;

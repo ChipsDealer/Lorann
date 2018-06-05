@@ -24,7 +24,7 @@ public class Treasure extends MotionLess{
      * Instanciate a new Treasure
      * The constructor.
      */
-	Treasure() {
+	public Treasure() {
 		super(SPRITE, Property.PENETRABLE_WITH_ACTION);
 	}
 

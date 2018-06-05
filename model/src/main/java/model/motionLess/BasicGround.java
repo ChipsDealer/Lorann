@@ -22,7 +22,7 @@ public class BasicGround extends MotionLess{
     /**
      * Instanciate a new BasicGround
      */
-    BasicGround() {
+    public BasicGround() {
 		super(SPRITE, Property.PENETRABLE_WITHOUT_ACTION);
 	}
 

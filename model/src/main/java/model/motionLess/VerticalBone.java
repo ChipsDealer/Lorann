@@ -22,7 +22,7 @@ public class VerticalBone extends MotionLess{
      * Instanciate a new VerticalBone.
      * The constructor.
      */
-	VerticalBone() {
+	public VerticalBone() {
 		super(SPRITE, Property.BLOCKING_WITHOUT_ACTION);
 	}
 

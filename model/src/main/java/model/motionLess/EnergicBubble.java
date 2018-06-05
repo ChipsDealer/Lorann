@@ -24,7 +24,7 @@ public class EnergicBubble extends MotionLess{
     /**
      * Instanciate a new EnergicBubble
      */
-	EnergicBubble() {
+	public EnergicBubble() {
 		super(SPRITE, Property.PENETRABLE_WITH_ACTION);
 	}
 

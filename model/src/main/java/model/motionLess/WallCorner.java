@@ -22,7 +22,7 @@ public class WallCorner extends MotionLess{
      * Instanciate a new WallCorner.
      * The Constructor.
      */
-	WallCorner() {
+	public WallCorner() {
 		super(SPRITE, Property.BLOCKING_WITHOUT_ACTION);
 	}
 

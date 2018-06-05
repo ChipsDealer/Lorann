@@ -24,7 +24,7 @@ public abstract class MotionLess extends Element{
 	 * 				the property
 	 */
 	
-	MotionLess(final Sprite sprite, final Property property) {
+	public MotionLess(final Sprite sprite, final Property property) {
 		super(sprite, property);
 	}
 	

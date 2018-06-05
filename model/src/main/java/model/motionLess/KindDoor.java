@@ -23,7 +23,7 @@ public class KindDoor extends MotionLess{
     /**
      * Instanciate a new KindDoor
      */
-	KindDoor() {
+	public KindDoor() {
 		super(SPRITE, Property.PENETRABLE_WITH_ACTION);	
 	}
 

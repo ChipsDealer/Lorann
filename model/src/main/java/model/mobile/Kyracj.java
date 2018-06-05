@@ -19,22 +19,21 @@ public class Kyracj extends Motion {
 	private static final Sprite SPRITEMONSTER1 = new Sprite("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Lorann\\monster_1.png", 'D');
 	
 	/**
-	 * The Constructor.
+	 * The constructor
+	 * 
+	 * @param x
+	 * @param y
 	 */
 	public Kyracj(int x,int y) {
 		super(x, y, SPRITEMONSTER1, Property.DEMONS);
 		this.setAlive(false);
 	}
 	
-	/*
-     * (non-Javadoc)
-     * @see model.mobile#move(ArrayList<?> map, ArrayList<?> mob)
-     */
-	
-
 	/**
 	 * This method allows movement pattern for Kyracj.
-	 * @param tables motion and motionless
+	 * 
+	 * @param motion
+	 * @param motionLess
 	 */
 	public void move(Motion motion[], MotionLess motionLess[][]) {
 			if (this.getLast_statement() == Last_statement.UP || this.getLast_statement() == Last_statement.NOP) {
@@ -57,8 +56,11 @@ public class Kyracj extends Motion {
 	
 	/**
 	 * This method allows collisions.
-	 * @param tables motion and motionless.
-	 * @return boolean
+	 * 
+	 * @param motion
+	 * @param motionLess
+	 * @return bool
+	 * 			if true : there is a colision; if false : there is no colision
 	 */
 	public boolean collision(Motion motion[], MotionLess motionLess[][]) {
 		boolean bool = false;
@@ -103,16 +105,19 @@ public class Kyracj extends Motion {
 		return bool;		
 	}
 	
-	 /*
-     * (non-Javadoc)
-     * @see model.mobile#die()
-     */
+	 /**
+	  * It used when this element die
+	  */
 	public void die() {
 		super.die();
 	}
 
 	/**
-	 * @param tables motion and motionless.
+	 * It used to move this element
+	 * 
+	 * @param motion
+	 * @param motionLess
+	 * @param dir
 	 */
 	@Override
 	public void move(Motion[] motion, MotionLess[][] motionLess, String dir) {

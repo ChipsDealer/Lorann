@@ -18,7 +18,11 @@ public class Sprite {
 	/**
 	 * The constructor.
 	 * Instanciate a new sprite
-	 * @param the pathImage, the string
+	 * 
+	 * @param pathImage
+	 * 			The image path
+	 * @param string
+	 * 			the id
 	 */
 	public Sprite(final String pathImage, final char string) {
 		this.setPathImage(pathImage);
@@ -37,6 +41,7 @@ public class Sprite {
 
 	/**
 	 * The getter of the image id
+	 * 
 	 * @return id
 	 */
 	public final char getId() {
@@ -45,14 +50,16 @@ public class Sprite {
 	
 	/**
 	 * The setter of the image id
+	 * 
 	 * @param id
 	 */
-	private void setId(final char id) {
+	public void setId(final char id) {
 		this.id = id;
 	}
 	
 	/**
 	 * The getter of the image path
+	 * 
 	 * @return pathImage
 	 */
 	public final String getPathImage() {
@@ -60,7 +67,8 @@ public class Sprite {
 	}
 	
 	/**
-	 * the setter og the image path
+	 * The setter og the image path
+	 * 
 	 * @param pathImage
 	 */
 	public final void setPathImage(String pathImage) {

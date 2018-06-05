@@ -19,10 +19,8 @@ public abstract class MotionLess extends Element{
 	 * 				the sprite
 	 * @param property
 	 * 				the property
-	 * 
-	 * @author Nathan Beer nathan.beer@viacesi.fr, Léo Thommes leo.thommes@cesi.fr, Frost
-	 * @version 1.0
-	 * @return
+	 * @return sprite
+	 * @return property
 	 */
 	
 	MotionLess(final Sprite sprite, final Property property) {
@@ -31,7 +29,8 @@ public abstract class MotionLess extends Element{
 	
 	/**
 	 * The action of the MotionLess element
-	 * @param motion, motionLess
+	 * @param motion
+	 * @param motionLess
 	 */
 	public void action(Motion[] motion, MotionLess[][] motionLess) {
 		

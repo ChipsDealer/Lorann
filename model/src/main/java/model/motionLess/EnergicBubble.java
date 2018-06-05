@@ -31,7 +31,9 @@ public class EnergicBubble extends MotionLess{
 
 	/**
 	 * This method allows the specific action to energicbubble.
-	 * @param the motion and motionless tables.
+	 * 
+	 * @param motion
+	 * @param motionLess
 	 */
 	@Override
 	public void action(Motion[] motion, MotionLess[][] motionLess) 

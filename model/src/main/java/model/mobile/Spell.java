@@ -24,7 +24,8 @@ public class Spell extends Motion {
 	
 	/**
 	 * The Constructor
-	 * @param int x, int y
+	 * @param x
+	 * @param y
 	 */
 	public Spell(int x,int y) {
 		super(x, y,SPRITESPELL1, Property.SPELL);
@@ -32,8 +33,10 @@ public class Spell extends Motion {
 		}
 
 	/**
-	 * @param the motion and motionless tables
-	 * @return the boolean
+	 * @param motion
+	 * @param motionLess
+	 * @return bool
+	 * 			A boolean : true if there is a colision; false if there is no colision
 	 */
 	public boolean collision(Motion motion[], MotionLess motionLess[][]) {
 		boolean bool = false;
@@ -83,7 +86,6 @@ public class Spell extends Motion {
 			motion[4].die();
 			bool = false;
 		}
-		//Colision with Lorann : WIP this feature don't work properly
 		else if (this.getX() == motion[0].getX() & this.getY() == motion[0].getY())
 		{
 			this.die();
@@ -92,13 +94,18 @@ public class Spell extends Motion {
 		return bool;		
 	}
 	
+	 /**
+	  * It used when this element die
+	  */
 	public void die() {
 		super.die();
 	}
 
 	/**
 	 * This method allows to move the spell.
-	 * @param the motion and motionless tables.
+	 * 
+	 * @param motion
+	 * @param motionLess
 	 */
 	@Override
 	public void move(Motion motion[], MotionLess motionLess[][]) 
@@ -167,7 +174,10 @@ public class Spell extends Motion {
 
 	/**
 	 * This method allows to make the movements for the spell.
-	 * @param the tables motion and motionless.
+	 * 
+	 * @param motion
+	 * @param motionLess
+	 * @param dir
 	 */
 	@Override
 	public void move(Motion[] motion, MotionLess[][] motionLess, String dir) {
@@ -176,7 +186,9 @@ public class Spell extends Motion {
 	
 	/**
 	 * This method allows to create a randwom sprite for the spell.
-	 * @return the int.
+	 * 
+	 * @return int
+	 * 			A random sprite
 	 */
 	private int setRandomSprite()
 	{

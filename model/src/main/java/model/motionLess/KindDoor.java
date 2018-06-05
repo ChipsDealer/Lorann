@@ -29,6 +29,9 @@ public class KindDoor extends MotionLess{
 
 	/**
 	 * This method allows to specific action for the kind door.
+	 * 
+	 * @param motion
+	 * @param motionLess
 	 */
 	@Override
 	public void action(Motion[] motion, MotionLess[][] motionLess) 

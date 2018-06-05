@@ -33,8 +33,8 @@ public class ModelFacade implements IModel {
     }
     
 	/**
-	 * (non-Javadoc)
-	 * @see model.IModel#getProcedureMotion(java.lang.String)
+	 * It used to execute a sql procedure to download the map information
+	 * 
 	 * @throws Exception
 	 */
 	public void getProcedureMotion() throws Exception{
@@ -42,9 +42,9 @@ public class ModelFacade implements IModel {
 	}
 
 	/**
-	 * (non-Javadoc)
-	 * @see model.IModel#getProcedureMotionLess(java.lang.String)
-	 * @Throws Exception
+	 * It used to execute a sql procedure to download the map information
+	 * 
+	 * @throws Exception
 	 */
 	public void getProcedureMotionLess() throws Exception{
 		MapDAO.getMotionLessMapTxt();
@@ -82,7 +82,6 @@ public class ModelFacade implements IModel {
 	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#getLifes()
-	 * @return a int
 	 */
 	public int getLifes()
 	{
@@ -92,7 +91,6 @@ public class ModelFacade implements IModel {
 	/**
 	 * (non-Javadoc)
 	 * @see model.IModel#getScore()
-	 * @return a int.
 	 */
 	public int getScore()
 	{
@@ -101,6 +99,7 @@ public class ModelFacade implements IModel {
 	
 	/**
 	 * The getter of the motionLess array
+	 * 
 	 * @return motionLess[][]
 	 */
 	public MotionLess[][] getMotionLess()
@@ -110,6 +109,7 @@ public class ModelFacade implements IModel {
 	
 	/**
 	 * The getter of the motion array
+	 * 
 	 * @return motion[]
 	 */
 	public Motion[] getMotion()
@@ -262,9 +262,8 @@ public class ModelFacade implements IModel {
 	}
 	
 	/**
-	 * non-Javadoc)
+	 * (non-Javadoc)
 	 * @see model.IModel#lorannAction(boolean)
-	 * @param a boolean
 	 */
 	public void lorannAction(boolean bool)
 	{

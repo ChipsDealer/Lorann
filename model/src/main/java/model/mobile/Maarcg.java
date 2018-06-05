@@ -21,7 +21,9 @@ public class Maarcg extends Motion {
 	
 	/**
 	 * The constructor.
-	 * @param int x, int y
+	 * 
+	 * @param x
+	 * @param y
 	 */
 	public Maarcg(int x,int y) {
 		super(x, y,SPRITEMONSTER4, Property.DEMONS);
@@ -30,11 +32,12 @@ public class Maarcg extends Motion {
 
 	
 	/**
-	 * Thgis class allows to all collisions.
+	 * This class allows to all collisions.
 	 * 
 	 * @param motion
 	 * @param motionLess
-	 * @return a boolean
+	 * @return bool
+	 * 			A boolean : true if there is a colision; false if there is no colision
 	 */
 	public boolean collision(Motion motion[], MotionLess motionLess[][]) {
 		boolean bool = false;
@@ -77,17 +80,19 @@ public class Maarcg extends Motion {
 		}
 		return bool;		
 	}
-	 /*
-     * (non-Javadoc)
-     * @see model.mobile#die()
-     */
+	
+	 /**
+	  * It used when this element die
+	  */
 	public void die() {
 		super.die();
 	}
 
 	/**
 	 * This method allows for movements.
-	 * @param the tables for motion and motionless elements.
+	 * 
+	 * @param motion
+	 * @param motionLess
 	 */
 	@Override
 	public void move(Motion motion[], MotionLess motionLess[][]) {
@@ -167,7 +172,10 @@ public class Maarcg extends Motion {
 
 	/**
 	 * This method allows for movements of motion elements.
-	 * @param the motion and motionless tables.
+	 * 
+	 * @param motion
+	 * @param motionLess
+	 * @param dir
 	 */
 	@Override
 	public void move(Motion[] motion, MotionLess[][] motionLess, String dir) {

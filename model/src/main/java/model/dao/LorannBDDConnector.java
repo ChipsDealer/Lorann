@@ -70,7 +70,8 @@ final class LorannBDDConnector {
     /**
      * Open.
      *
-     * @return true, if successful
+     * @return true
+     * 		if successful
      */
     private boolean open() {
         try {
@@ -89,8 +90,9 @@ final class LorannBDDConnector {
      * Execute query.
      *
      * @param query
-     *            the query
-     * @return the result set
+     *         	The query
+     * @return ResultSet
+     * 			The result set
      */
     public ResultSet executeQuery(final String query) {
         try {

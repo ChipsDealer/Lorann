@@ -45,6 +45,7 @@ public abstract class MotionFactory {
 
     /**
      * This method allows to read and analyse txt file where motion elments are stored.
+     * 
      * @throws Exception
      */
 	public static void loadFile() throws Exception
@@ -91,6 +92,8 @@ public abstract class MotionFactory {
 	}
 	
 	/**
+	 * Getter of motion array
+	 * 
 	 * @return the motion.
 	 */
 	public static Motion[] getMotion() {
@@ -99,7 +102,9 @@ public abstract class MotionFactory {
 
 
 	/**
-	 * @param the motion.
+	 * Setter of motion array
+	 * 
+	 * @param motion
 	 */
 	public static void setMotion(Motion[] motion) {
 		MotionFactory.motion = motion;

@@ -56,9 +56,7 @@ public abstract class MotionLessFactory {
 	/**
      * Gets the good MotionLess from file symbol.
      *
-     * @param fileSymbol
-     *            the file symbol
-     * @return the from file symbol
+     * @return the point from file symbol
      */
     public static Point loadFile() throws Exception
     {
@@ -155,17 +153,21 @@ public abstract class MotionLessFactory {
     }
 	
 	/**
-	 * Getter and setter for motion less table.
+	 * Getter for motionLess array
+	 * 
+	 * @return motionLess
 	 */
     public static MotionLess[][] getMotionLess() {
 		return motionLess;
 	}
 
-
+    /**
+     * Setter of motionLess array
+     * 
+     * @param motionLess
+     */
 	public static void setMotionLess(MotionLess[][] motionLess) {
 		MotionLessFactory.motionLess = motionLess;
 	}
 	 
-	
-	
 }

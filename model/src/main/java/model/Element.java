@@ -22,7 +22,7 @@ public abstract class Element {
      *
      * @param sprite
      *            the sprite
-     * @param permeability
+     * @param property
      *            the permeability
      */
 	public Element(final Sprite sprite, final Property property){
@@ -32,7 +32,8 @@ public abstract class Element {
 	
 	/**
 	 * Getter of the sprite
-	 * @return Sprite
+	 * 
+	 * @return sprite
 	 */
 	public final Sprite getSprite() {
 		return this.sprite;
@@ -40,7 +41,8 @@ public abstract class Element {
 
 	/**
 	 * Getter of the property
-	 * @return Property
+	 * 
+	 * @return property
 	 */
 	public final Property getProperty() {
 		return this.property;
@@ -48,6 +50,7 @@ public abstract class Element {
 
 	/**
 	 * Setter of the Property
+	 *
 	 * @param property
 	 */
 	protected void setProperty(final Property property) {
@@ -56,6 +59,7 @@ public abstract class Element {
 
 	/**
 	 * Setter of the Sprite
+	 * 
 	 * @param sprite
 	 */
 	protected final void setSprite(final Sprite sprite) {

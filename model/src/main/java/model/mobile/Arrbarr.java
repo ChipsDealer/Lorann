@@ -21,7 +21,9 @@ public class Arrbarr extends Motion {
 	
 	/**
 	 * The constructor
-	 * @param x, y
+	 * 
+	 * @param x
+	 * @param y
 	 */
 	public Arrbarr(int x,int y) {
 		super(x, y, SPRITEMONSTER3, Property.DEMONS);
@@ -31,8 +33,9 @@ public class Arrbarr extends Motion {
 	/**
 	 * This method allows the collision.
 	 * 
-	 * @param table motion and motionless
-	 * @return boolean
+	 * @param motion
+	 * @param motionLess
+	 * @return bool
 	 */
 	public boolean collision(Motion motion[], MotionLess motionLess[][]) {
 		boolean bool = false;
@@ -77,17 +80,18 @@ public class Arrbarr extends Motion {
 	}
 
 	
-	 /*
-     * (non-Javadoc)
-     * @see model.mobile#die()
-     */
+	 /**
+	  * It used when this element die
+	  */
 	public void die() {
 		super.die();
 	}
 
 	/**
 	 * This method allows the movement.
-	 * @param motion and motionless table
+	 * 
+	 * @param motion
+	 * @param motionLess
 	 */
 	@Override
 	public void move(Motion motion[], MotionLess motionLess[][]) {
@@ -170,7 +174,10 @@ public class Arrbarr extends Motion {
 
 	/**
 	 * This methdo allows the movement.
-	 * @param the tables motion and motionless
+	 * 
+	 * @param motion
+	 * @param motionLess
+	 * @param dir
 	 */
 	@Override
 	public void move(Motion[] motion, MotionLess[][] motionLess, String dir) {

@@ -24,7 +24,11 @@ public abstract class Motion extends Element {
 	
 	/**
 	 * The Constructor.
-	 * @param int x, int y, the sprite and the property.
+	 * 
+	 * @param x
+	 * @param y
+	 * @param sprite
+	 * @param property
 	 */
 	public Motion(final int x, final int y, final Sprite sprite, final Property property) {
 		super(sprite, property);
@@ -36,8 +40,7 @@ public abstract class Motion extends Element {
 	
 	}
 	 /**
-     * Delete a motion element
-     * 
+     * Delete this motion element
      */
 	public void die() {
 		this.alive = false;
@@ -46,7 +49,9 @@ public abstract class Motion extends Element {
 	}
 	 /**
      * This abstract method allow to move the element.
-     * @param the tables motion and motionless.
+     * 
+     * @param motion
+     * @param motionLess
      */
 	public abstract void move(Motion motion[], MotionLess motionLess[][]);
 	
@@ -140,40 +145,78 @@ public abstract class Motion extends Element {
 	}
 	
 	/**
-	 * All getters and setters.
+	 * Getter of x
+	 * 
+	 * @return x
 	 */
 	public int getX() {
 		return x;
 	}
-	
+	/**
+	 * Setter of X
+	 * 
+	 * @param x
+	 */
 	public void setX(int x) {
 		this.x = x;
 	}
-	
+	/**
+	 * Getter of y
+	 * 
+	 * @return y
+	 */
 	public int getY() {
 		return y;
 	}
 	
+	/**
+	 * Setter of y
+	 * 
+	 * @param y
+	 */
 	public void setY(int y) {
 		this.y = y;
 	}
 	
+	/**
+	 * Getter of alive
+	 * 
+	 * @return alive
+	 */
 	public boolean isAlive() {
 		return alive;
 	}
 	
+	/**
+	 * Setter of alive
+	 * 
+	 * @param alive
+	 */
 	public void setAlive(boolean alive) {
 		this.alive = alive;
 	}
 	
+	/**
+	 * It used to respawn Lorann and to reload the maps
+	 */
 	public void respawn() {
 		this.alive = true;
 	}
 	
+	/**
+	 * Getter of last_statement
+	 * 
+	 * @return last_statement
+	 */
 	public Last_statement getLast_statement() {
 		return last_statement;
 	}
 	
+	/**
+	 * Setter of last_statement
+	 * 
+	 * @param last_statement
+	 */
 	public void setLast_statement(Last_statement last_statement) {
 		this.last_statement = last_statement;
 	}

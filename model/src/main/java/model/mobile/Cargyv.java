@@ -20,7 +20,9 @@ public class Cargyv extends Motion {
 	
 	/**
 	 * The constructor.
-	 * @param int x, int y
+	 * 
+	 * @param x
+	 * @param y
 	 */
 	public Cargyv(int x,int y) {
 		super(x , y,SPRITEMONSTER2 , Property.DEMONS);
@@ -29,8 +31,11 @@ public class Cargyv extends Motion {
 	
 	/**
 	 * This method allows the collisions.
-	 * @param tables motion and motionless.
-	 * @return boolean
+	 * 
+	 * @param motion
+	 * @param motionLess
+	 * @return bool
+	 * 			A boolean : true if there is a colision; false if there is no colision
 	 */
 	public boolean collision(Motion motion[], MotionLess motionLess[][]) {
 		boolean bool = false;
@@ -73,23 +78,19 @@ public class Cargyv extends Motion {
 		}
 		return bool;		
 	}
-	 /**
-     * (non-Javadoc)
-     * @see model.mobile#move(ArrayList<?> map, ArrayList<?> mob)
-     */
 
-	
 	 /**
-     * (non-Javadoc)
-     * @see model.mobile#die()
-     */
+	  * It used when this element die
+	  */
 	public void die() {
 		super.die();
 	}
 
 	/**
 	 * This method allows the movements.
-	 * @param tables motion and motionless.
+	 * 
+	 * @param motion
+	 * @param motionLess
 	 */
 	@Override
 	public void move(Motion motion[], MotionLess motionLess[][]) {
@@ -113,7 +114,10 @@ public class Cargyv extends Motion {
 
 	/**
 	 * This method allows the movements.
-	 * @param tables motion and motionless.
+	 * 
+	 * @param motion
+	 * @param motionLess
+	 * @param dir
 	 */
 	@Override
 	public void move(Motion[] motion, MotionLess[][] motionLess, String dir) {

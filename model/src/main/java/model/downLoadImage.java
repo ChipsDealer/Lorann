@@ -24,8 +24,9 @@ public class downLoadImage {
 	/**
 	 * Search all file from server and load them into new local files.
 	 * Input file is covered entirely, to create all files.
+	 * 
 	 * @throws FileNotFoundException 
-	 * @return int
+	 * @return imageUrlServerBasic
 	 */
        public String downloadSprites(String imageUrlServerBasic) throws FileNotFoundException {
     	   
@@ -105,7 +106,7 @@ public class downLoadImage {
            }
        }
        
-    	    /*
+    	    /**
     	     * Return Url's server.
     	     */
 		return imageUrlServerBasic;

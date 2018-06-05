@@ -22,9 +22,6 @@ public abstract class MotionLess extends Element{
 	 * 				the sprite
 	 * @param property
 	 * 				the property
-	 * 
-	 * @author Léo Thommes
-	 * @return
 	 */
 	
 	MotionLess(final Sprite sprite, final Property property) {
@@ -33,6 +30,7 @@ public abstract class MotionLess extends Element{
 	
 	/**
 	 * This method allows to specific action for all motion elements.
+	 * 
 	 * @param motion
 	 * @param motionLess
 	 */

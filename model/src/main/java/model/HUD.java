@@ -32,7 +32,8 @@ public abstract class HUD {
 	
 	/**
 	 * The setter of the game score
-	 * @param int
+	 * 
+	 * @param score
 	 */
 	public static void setScore(final int score) {
 		HUD.score = score;
@@ -40,7 +41,8 @@ public abstract class HUD {
 	
 	/**
 	 * The getter of the game score
-	 * @return int
+	 * 
+	 * @return score
 	 */
 	public static int getScore() {
 		return HUD.score;
@@ -48,7 +50,8 @@ public abstract class HUD {
 	
 	/**
 	 * The setter of the Lorann lifes
-	 * @param int
+	 * 
+	 * @param lifes
 	 */
 	public static void setLifes(final int lifes) {
 		HUD.lifes=lifes;
@@ -56,7 +59,8 @@ public abstract class HUD {
 	
 	/**
 	 * The getter of the Lorann lifes
-	 * @return int
+	 * 
+	 * @return lifes
 	 */
 	public static int getLifes() {
 		return HUD.lifes;
@@ -93,7 +97,8 @@ public abstract class HUD {
 	/**
 	 * Return the game status
 	 * if gameRunning = true, then the game is still running
-	 * @return boolean
+	 * 
+	 * @return gameRunning
 	 */
 	public static boolean isGameRunning() {
 		return gameRunning;
@@ -101,7 +106,8 @@ public abstract class HUD {
 
 	/**
 	 * Set the game status
-	 * @param boolean
+	 * 
+	 * @param gameRunning
 	 */
 	public static void setGameRunning(boolean gameRunning) {
 		HUD.gameRunning = gameRunning;
@@ -109,7 +115,8 @@ public abstract class HUD {
 
 	/**
 	 * The getter of the width of the Map
-	 * @return int
+	 * 
+	 * @return mapX
 	 */
 	public static int getMapX() {
 		return mapX;
@@ -117,7 +124,8 @@ public abstract class HUD {
 
 	/**
 	 * The setter of the width of the Map
-	 * @param int
+	 * 
+	 * @param mapX
 	 */
 	public static void setMapX(int mapX) {
 		HUD.mapX = mapX;
@@ -125,7 +133,8 @@ public abstract class HUD {
 
 	/**
 	 * The getter of the length of the Map
-	 * @return int
+	 * 
+	 * @return mapY
 	 */
 	public static int getMapY() {
 		return mapY;
@@ -133,7 +142,8 @@ public abstract class HUD {
 
 	/**
 	 *  The setter of the length of the Map
-	 *  @param int
+	 *  
+	 *  @param mapY
 	 */
 	public static void setMapY(int mapY) {
 		HUD.mapY = mapY;

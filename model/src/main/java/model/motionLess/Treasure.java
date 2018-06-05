@@ -31,7 +31,9 @@ public class Treasure extends MotionLess{
 
 	/**
 	 * This method allows to display score on HUD.
-	 * @param motion and motionless tables.
+	 * 
+	 * @param motion
+	 * @param motionLess
 	 */
 	@Override
 	public void action(Motion[] motion, MotionLess[][] motionLess) {

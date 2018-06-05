@@ -37,6 +37,7 @@ public abstract class MapDAO extends AbstractDAO {
     
     /**
      * Get the motion map from the BDD and write into a .txt file
+     * 
      * @throws Exception
      */
     public static void getMotionMapTxt() throws Exception {
@@ -93,6 +94,7 @@ public abstract class MapDAO extends AbstractDAO {
     
     /**
      * Get the motionLess map from the BDD and write into a .txt file
+     * 
      * @throws Exception
      */
     public static void getMotionLessMapTxt() throws Exception {
@@ -135,6 +137,7 @@ public abstract class MapDAO extends AbstractDAO {
     
     /**
      * Get the sprites from the BDD and write into a .txt file
+     * 
      * @throws Exception
      */
     public static void getSpriteTxt() throws Exception {
@@ -166,6 +169,7 @@ public abstract class MapDAO extends AbstractDAO {
     
     /**
      * Get the mapNumber from the BDD
+     * 
      * @throws Exception
      */
     public static int getMapNumber() throws Exception {
@@ -186,6 +190,7 @@ public abstract class MapDAO extends AbstractDAO {
     
     /**
      * This method allows to create the map.
+     * 
      * @throws Exception
      */
     public static void CreateMap() throws Exception {

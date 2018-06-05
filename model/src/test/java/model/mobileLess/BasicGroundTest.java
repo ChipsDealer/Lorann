@@ -30,7 +30,9 @@ public class BasicGroundTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	/**
+	 * Test if there is a BasicGround
+	 */
 	@Test
 	public void testBasicGround() {
 		assertNotNull(this.basicground);

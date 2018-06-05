@@ -34,7 +34,9 @@ public class CargyvTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	/**
+	 * Test if Cargyv can die
+	 */
 	@Test
 	public void testDie() {
 		boolean expectedOutcome = cargyv.isAlive();

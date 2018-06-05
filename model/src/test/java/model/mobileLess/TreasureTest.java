@@ -30,7 +30,9 @@ public class TreasureTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	/**
+	 * Test if there is a Treasure
+	 */
 	@Test
 	public void testTreasure() {
 		assertNotNull(this.treasure);

@@ -30,7 +30,9 @@ public class KindDoorTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	/**
+	 * Test if there si a KindDoor
+	 */
 	@Test
 	public void testKindDoor() {
 		assertNotNull(this.kinddoor);

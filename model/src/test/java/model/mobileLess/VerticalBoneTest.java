@@ -30,6 +30,9 @@ public class VerticalBoneTest {
 	@After
 	public void tearDown() throws Exception {
 	}
+	/**
+	 * TEst if there is a VerticalBone
+	 */
 
 	@Test
 	public void testVerticalBone() {

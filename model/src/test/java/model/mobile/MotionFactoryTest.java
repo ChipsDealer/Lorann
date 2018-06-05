@@ -30,11 +30,17 @@ public class MotionFactoryTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	/**
+	 * Test the method LoadFile
+	 * @throws Exception
+	 */
 	@Test
 	public void testLoadFile() throws Exception {
 		MotionFactory.loadFile();
 	}
+	/**
+	 * Test The method GetMotion
+	 */
 
 	@Test
 	public void testGetMotion() {
@@ -42,7 +48,9 @@ public class MotionFactoryTest {
 		Motion[] expectedOutcome = MotionFactory.getMotion();
 		assertEquals(motion, expectedOutcome);
 	}
-
+	/**
+	 * Test The method SetMotion
+	 */
 	@Test
 	public void testSetMotion() {
 		MotionFactory.setMotion(motion);

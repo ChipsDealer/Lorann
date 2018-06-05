@@ -34,7 +34,9 @@ public class MaarcgTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	/**
+	 * Test if Maarch die
+	 */
 	@Test
 	public void testDie() {
 		boolean expectedOutcome = maarcg.isAlive();
@@ -51,7 +53,7 @@ public class MaarcgTest {
 	}
 
 	/**
-	 * Method to test the collisions.
+	 * Method to test the collisions of Maarcg.
 	 */
 	@Test
 	public void testCollision() {

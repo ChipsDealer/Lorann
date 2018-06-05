@@ -31,7 +31,10 @@ public class MapDAOTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	/**
+	 * Test if we can Get the motion map from the TXT
+	 * @throws Exception
+	 */
 	@Test
 	public void testGetMotionMapTxt() throws Exception {
 		try {
@@ -40,7 +43,10 @@ public class MapDAOTest {
 			fail();
 		}
 	}
-
+	/**
+	 * Test if we can Get the motionLess Map from the TXT
+	 * @throws Exception
+	 */
 	@Test
 	public void testGetMotionLessMapTxt() throws Exception {
 		try {
@@ -49,7 +55,10 @@ public class MapDAOTest {
 			fail();
 		}
 	}
-
+	/**
+	 * Test if we can Get the Sprite from the TXT
+	 * @throws Exception
+	 */
 	@Test
 	public void testGetSpriteTxt() throws Exception {
 		try {
@@ -58,7 +67,10 @@ public class MapDAOTest {
 			fail();
 		}
 	}
-
+	/**
+	 * Test if we can Create the map
+	 * @throws Exception
+	 */
 	@Test
 	public void testCreateMap() throws Exception {
 		try {

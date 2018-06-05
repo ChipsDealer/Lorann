@@ -10,12 +10,19 @@ import org.junit.Test;
 
 import model.IModel;
 import view.IView;
-
+/**
+ * <h1>The Class ControllerFacadeTest provides a test of the ControllerFacade </h1>
+ *
+ * @author Nathan Beer nathan.beer@viacesi.fr
+ * @version 1.0
+ * @since jre1.8.0_131
+ */
 public class ControllerFacadeTest {
 
 	private IView view;
 	private IModel model;
 	private ControllerFacade controller;
+
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -24,6 +31,7 @@ public class ControllerFacadeTest {
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
+
 
 	@Before
 	public void setUp() throws Exception {
@@ -195,13 +203,17 @@ public class ControllerFacadeTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	/**
+	 * Test the Controller Facade can be build
+	 */
 	@Test
 	public void testControllerFacade() {
 		assertNotNull(this.view);
 		assertNotNull(this.model);
 	}
-
+	/**
+	 * Test if the Controller start
+	 */
 	@Test
 	public void testStart() {
 		try {
@@ -210,7 +222,9 @@ public class ControllerFacadeTest {
 			fail();
 		}
 	}
-
+	/**
+	 * Test if the Controller.runGame is running
+	 */
 	@Test
 	public void testRunGame() {
 		try {
@@ -220,27 +234,25 @@ public class ControllerFacadeTest {
 			fail();
 		}
 	}
+	/**
+	 * Test if the View his correctly get from the controller
+	 */
 
 	@Test
 	public void testGetView() {
 		assertNotNull(this.controller.getView());
 	}
-
+	/**
+	 *  Test if the Model his correcly get from the Model
+	 */
 	@Test
 	public void testGetModel() {
 		assertNotNull(this.controller.getModel());
 	}
 	
-	@Test
-	public void testKeyPressed() {
-		//The kayPressed doesn't have body, so he can't make errors
-	}
-
-	@Test
-	public void testKeyReleased() {
-		//The kayPressed doesn't have body, so he can't make errors
-	}
-
+	/**
+	 * Test if the Key Typed from the controller is null
+	 */
 	@Test
 	public void testKeyTyped() {
 		try {

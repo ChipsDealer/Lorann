@@ -30,7 +30,9 @@ public class EnergicBubbleTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	/**
+	 * Test if there is a EnergicBubble
+	 */
 	@Test
 	public void testEnergicBubble() {
 		assertNotNull(this.energicbubble);

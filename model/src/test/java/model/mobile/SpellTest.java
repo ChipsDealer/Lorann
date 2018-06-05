@@ -35,19 +35,25 @@ public class SpellTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	/**
+	 * Test if the Spell can die
+	 */
 	@Test
 	public void testDie() {
 		boolean expectedOutcome = spell.isAlive();
 		assertEquals(false, expectedOutcome);	
 	}
-
+	/**
+	 * Test if the Spell can Die
+	 */
 	@Test
 	public void testSpell() {
 		boolean expectedOutcome = spell.isAlive();
 		assertEquals(false, expectedOutcome);
 	}
-
+	/**
+	 * Test if the spell have a collision
+	 */
 	@Test
 	public void testCollision() {
 		try {
@@ -56,7 +62,9 @@ public class SpellTest {
 			assertNotNull(e);
 		}
 	}
-	
+	/**
+	 * Test if we can had a random sprite to the spell
+	 */
 	@Test
 	public void testSetRandomSprite() {
 		int expectedOutcome = spell.setRandomSprite();

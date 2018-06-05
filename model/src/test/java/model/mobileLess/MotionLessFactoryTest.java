@@ -30,7 +30,10 @@ public class MotionLessFactoryTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	/**
+	 * Test if we can Load the File 
+	 * @throws Exception
+	 */
 	@Test
 	public void testLoadFile() throws Exception {
 		try {
@@ -39,14 +42,18 @@ public class MotionLessFactoryTest {
 			fail();
 		}
 	}
-
+	/**
+	 * Test if we can Get the MotionLess
+	 */
 	@Test
 	public void testGetMotionLess() {
 		MotionLessFactory.setMotionLess(motionLess);
 		MotionLess[][] expectedOutcome = MotionLessFactory.getMotionLess();
 		assertEquals(motionLess, expectedOutcome);
 		}
-
+	/**
+	 * Test if we can Set MotionLess
+	 */
 	@Test
 	public void testSetMotionLess() {
 		MotionLessFactory.setMotionLess(motionLess);

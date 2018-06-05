@@ -31,13 +31,17 @@ public class ViewFacadeTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	/**
+	 * Test if can Create Display
+	 */
 	@Test
 	public void testCreateDisplay() {
 		this.view.createDisplay(new int[5][5], new String[5], new String[5][5], 100, 11, 0, 0);
 		assertNotNull(this.view.getWindow());
 	}
-
+	/**
+	 * Test if we can Display a Message
+	 */
 	@Test
 	public void testDisplayMessage() {
 		try {
@@ -49,19 +53,25 @@ public class ViewFacadeTest {
 		}
 		
 	}
-
+	/**
+	 * TEst if we can Get a Window
+	 */
 	@Test
 	public void testGetWindow() {
 		this.view.createDisplay(new int[5][5], new String[5], new String[5][5], 100, 11, 0, 0);
 		assertNotNull(this.view.getWindow());
 	}
-
+	/**
+	 * Test if we can Set a Window
+	 */
 	@Test
 	public void testSetWindow() {
 		this.view.setWindow(new Window(0, 0, new int[5][5], new String[5], new String[5][5], 10, 10));
 		assertNotNull(this.view.getWindow());
 	}
-
+	/**
+	 * Test if can Add a Listener
+	 */
 	@Test
 	public void testAddListener() {
 		this.view.createDisplay(new int[5][5], new String[5], new String[5][5], 100, 11, 0, 0);
@@ -87,7 +97,9 @@ public class ViewFacadeTest {
 		});
 		assertNotNull(this.view.getWindow().getKeyListeners());;
 	}
-
+	/**
+	 * Test tif this is the end of the game
+	 */
 	@Test
 	public void testEndGame() {
 		try {
@@ -99,7 +111,9 @@ public class ViewFacadeTest {
 			fail();
 		}
 	}
-
+	/**
+	 * Test the method CloseGame
+	 */
 	@Test
 	public void testCloseGame() {
 		try {

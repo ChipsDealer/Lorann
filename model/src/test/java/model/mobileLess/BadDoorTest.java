@@ -30,7 +30,9 @@ public class BadDoorTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	/***
+	 * Test if there is a BadDoor
+	 */
 	@Test
 	public void testBadDoor() {
 		assertNotNull(this.baddoor);

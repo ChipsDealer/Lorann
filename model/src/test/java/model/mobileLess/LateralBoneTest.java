@@ -30,7 +30,9 @@ public class LateralBoneTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	/**
+	 * Test if there is a LateralBone
+	 */
 	@Test
 	public void testLateralBone() {
 		assertNotNull(this.lateralbone);

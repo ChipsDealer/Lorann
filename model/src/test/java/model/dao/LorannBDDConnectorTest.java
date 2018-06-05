@@ -47,51 +47,67 @@ public class LorannBDDConnectorTest {
 	public void testLorannBDDConnector() {
 		
 	}
-
+	/**
+	 * Test if we can get the Instance
+	 */
 	@Test
 	public void testGetInstance() {
 		LorannBDDConnector expectedOutcome = lorannBDDConnector.getInstance();
 		assertNotEquals(null, expectedOutcome);
 	}
-
+	/**
+	 * Test the method ExecuteQuery
+	 */
 	@Test
 	public void testExecuteQuery() {
 		ResultSet expectedOutcome = lorannBDDConnector.executeQuery("test");
 			assertEquals(null, expectedOutcome);
 	}
-
+	/**
+	 * Test the method PrepareCall
+	 */
 	@Test
 	public void testPrepareCall() {
 		CallableStatement expectedOutcome;
 		assertNotNull(expectedOutcome = lorannBDDConnector.prepareCall("test"));
 	}
-
+	/**
+	 * Test the metho ExecuteUpdate
+	 */
 	@Test
 	public void testExecuteUpdate() {
 		int expectedOutcome = lorannBDDConnector.executeUpdate("test");
 		assertEquals(0, expectedOutcome);
 	}
-
+	/**
+	 * Test if we can get The connetion from the BDD
+	 */
 	@Test
 	public void testGetConnection() {
 		lorannBDDConnector.setConnection(connection);
 		Connection expectedOutcome = lorannBDDConnector.getConnection();
 		assertEquals(connection, expectedOutcome);
 	}
-
+	/**
+	 * Test if we set the connection from the Connection
+	 */
 	@Test
 	public void testSetConnection() {
 		lorannBDDConnector.setConnection(connection);
 		assertEquals(connection, lorannBDDConnector.getConnection());
 	}
-
+	/**
+	 * Test fi we can Get the Statement
+	 */
 	@Test
 	public void testGetStatement() {
 		lorannBDDConnector.setStatement(statement);
 		Statement expectedOutcome = lorannBDDConnector.getStatement();
 		assertEquals(statement, expectedOutcome);
 	}
-
+	/**
+	 * Test if we can Set the Statements
+	 */
 	@Test
 	public void testSetStatement() {
 		lorannBDDConnector.setStatement(statement);

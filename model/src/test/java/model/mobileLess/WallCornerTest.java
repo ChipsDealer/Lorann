@@ -30,7 +30,9 @@ public class WallCornerTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	/**
+ 	*Test if there is a WallCorner 
+ 	*/
 	@Test
 	public void testWallCorner() {
 		assertNotNull(this.wallcorner);
